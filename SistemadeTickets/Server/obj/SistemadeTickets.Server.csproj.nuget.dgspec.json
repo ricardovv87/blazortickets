@@ -1,0 +1,339 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Server\\SistemadeTickets.Server.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj",
+        "projectName": "SistemadeTickets.Client",
+        "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj",
+        "packagesPath": "C:\\Users\\Ricardo Velazquez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Client\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ricardo Velazquez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj": {
+                "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.Authentication": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.browser-wasm",
+              "version": "[5.0.17, 5.0.17]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Server\\SistemadeTickets.Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Server\\SistemadeTickets.Server.csproj",
+        "projectName": "SistemadeTickets.Server",
+        "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Server\\SistemadeTickets.Server.csproj",
+        "packagesPath": "C:\\Users\\Ricardo Velazquez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Server\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ricardo Velazquez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj": {
+                "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj"
+              },
+              "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj": {
+                "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj"
+              },
+              "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\TicketsRepository\\TicketsRepository.csproj": {
+                "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\TicketsRepository\\TicketsRepository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.ApiAuthorization.IdentityServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.32.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj",
+        "projectName": "SistemadeTickets.Shared",
+        "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj",
+        "packagesPath": "C:\\Users\\Ricardo Velazquez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ricardo Velazquez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\TicketsRepository\\TicketsRepository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\TicketsRepository\\TicketsRepository.csproj",
+        "projectName": "TicketsRepository",
+        "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\TicketsRepository\\TicketsRepository.csproj",
+        "packagesPath": "C:\\Users\\Ricardo Velazquez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\TicketsRepository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ricardo Velazquez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj": {
+                "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

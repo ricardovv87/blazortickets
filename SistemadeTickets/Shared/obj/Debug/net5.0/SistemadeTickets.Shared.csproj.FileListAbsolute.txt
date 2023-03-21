@@ -1,0 +1,12 @@
+C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared\bin\Debug\net5.0\SistemadeTickets.Shared.deps.json
+C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared\bin\Debug\net5.0\SistemadeTickets.Shared.dll
+C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared\bin\Debug\net5.0\SistemadeTickets.Shared.pdb
+C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared\obj\Debug\net5.0\SistemadeTickets.Shared.csproj.AssemblyReference.cache
+C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared\obj\Debug\net5.0\SistemadeTickets.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared\obj\Debug\net5.0\SistemadeTickets.Shared.AssemblyInfoInputs.cache
+C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared\obj\Debug\net5.0\SistemadeTickets.Shared.AssemblyInfo.cs
+C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared\obj\Debug\net5.0\SistemadeTickets.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared\obj\Debug\net5.0\SistemadeTickets.Shared.dll
+C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared\obj\Debug\net5.0\refint\SistemadeTickets.Shared.dll
+C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared\obj\Debug\net5.0\SistemadeTickets.Shared.pdb
+C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared\obj\Debug\net5.0\ref\SistemadeTickets.Shared.dll

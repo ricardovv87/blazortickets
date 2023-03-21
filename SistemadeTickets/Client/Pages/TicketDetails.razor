@@ -1,0 +1,120 @@
+﻿@page "/Ticketdetails"
+@page "/Ticketdetails/{id:int}"
+
+@inject NavigationManager navigation
+@inject IservicesTicket servicesticket
+
+
+<h3></h3>
+
+
+@if (ticket == null)
+{
+   <div class="d-flex align-items-center">
+  <strong>Cargando...</strong>
+  <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+    </div>
+}else
+{
+    
+    <EditForm Model="ticket" OnValidSubmit="Guardar">
+
+        <div class="card"> 
+          <h5 class="card-header">Formulario de Ticket</h5>
+          <div class="card-body">
+              <div class="container">
+
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <label for="">Usuario</Label>
+                              <InputText class="form-control" @bind-Value="ticket.Usuario" required></InputText>
+                      </div>
+                       <div class="col-md-3 ">
+                          <label for="">Fecha de Solicitud</Label>
+                              <InputDate class="form-control" @bind-Value="ticket.Fecha"></InputDate>
+                      </div>
+                        <div class="col-md-4 mb-3">
+                          <label for="">Estado</Label>
+                              <InputText class="form-control" @bind-Value="ticket.Estado" readonly></InputText>
+                      </div>
+                        <div class="col-md-4 mb-3">
+                          <label for="">Prioridad</Label>
+                              <InputText class="form-control" @bind-Value="ticket.prioridad" readonly></InputText>
+                      </div>
+                        <div class="col-md-6 mb-3">
+                          <label for="">Asunto</Label>
+                              <InputText class="form-control" @bind-Value="ticket.Asunto" required></InputText>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                          <label for="">Ingeniero que atiende</Label>
+                              <InputText class="form-control" @bind-Value="ticket.Ingeniero" readonly></InputText>
+                      </div>
+
+                        <div class="col-md-12 mb-3">
+                          <label for="">Mensaje</Label>
+                              <InputTextArea class="form-control" @bind-Value="ticket.Mensaje" required></InputTextArea>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-mb-4 mb-3">
+
+                      </div>
+                      <div class="col-md-4 mb-3">
+                          <input type="submit" class="btn btn-success" value="Guardar"/>
+                           <input type="button" class="btn btn-secundary" value="Cancelar"/>
+                      </div>
+                      <div class="col-mb-4 mb-3">
+
+                      </div>
+
+                  </div>
+
+
+              </div>
+          </div>
+        </div>
+
+
+    </EditForm>
+
+
+
+
+}
+
+
+
+
+@code {
+    public Ticket ticket;
+    [Parameter]
+    public int id { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        if (id == 0)
+          ticket = new Ticket();
+         else
+            ticket = await servicesticket.GetDetails(id);
+
+        ticket.Fecha = DateTime.Today; 
+        ticket.Estado = "Sin Asignar";
+        ticket.prioridad = "Baja";
+        ticket.Ingeniero = "Sin Asignar";
+    }
+
+    private async Task Guardar()
+    {
+        await servicesticket.SaveTicket(ticket);
+        Home();
+    }
+
+    private async Task Home()
+    {
+        navigation.NavigateTo("/tablero");
+    }
+
+
+
+}
