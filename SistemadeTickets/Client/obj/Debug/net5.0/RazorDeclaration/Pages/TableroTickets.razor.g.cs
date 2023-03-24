@@ -112,7 +112,7 @@ using SistemadeTickets.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 78 "C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Client\Pages\TableroTickets.razor"
+#line 92 "C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Client\Pages\TableroTickets.razor"
        
     IEnumerable<Ticket> ticket;
     public string Filter { get; set; }
@@ -129,7 +129,12 @@ using SistemadeTickets.Shared;
         }
     }
 
-    private async Task Nuevo()
+    private async Task NuevoUsr()
+    {
+        navigation.NavigateTo("/Ticketdetails");
+    }
+
+    private async Task NuevoIng()
     {
         navigation.NavigateTo("/TicketdetailsIngeniero");
     }

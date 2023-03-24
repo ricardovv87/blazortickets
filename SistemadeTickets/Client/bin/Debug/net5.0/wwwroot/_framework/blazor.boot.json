@@ -199,14 +199,14 @@
       "netstandard.dll": "sha256-W3q3PN+lpRB+tRJEIhtMgYOGFv0pauEeeCS9iIRkKAM=",
       "System.Private.CoreLib.dll": "sha256-9rUJv1mXEQdGt\/kWiJ1ITPPzp3cAi3lSmqHVTisp7w0=",
       "SistemadeTickets.Shared.dll": "sha256-s70T1y4uw8FNl+k2xBI1IjzlJgvSJ7nRD3\/u8iX5dmw=",
-      "SistemadeTickets.Client.dll": "sha256-jz5qg50NPF3aiwxTgSd9cUUIkvWGspspgVmJUqICpDY="
+      "SistemadeTickets.Client.dll": "sha256-TdXcjgkP\/mnM5s72NjJsxRRWM\/gD\/TVZN0EF5y2c7xY="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "SistemadeTickets.Shared.pdb": "sha256-RKYsPzCz5\/\/pm3tofFNPRfxdmN\/c1+BFGIw1hojdjGM=",
-      "SistemadeTickets.Client.pdb": "sha256-HbncVzYudM1kHsYKIQl+rtg3b9M1bluPv6QlbUHtsN4="
+      "SistemadeTickets.Client.pdb": "sha256-obhtcu2nIjBmALPOu0l\/dK8KgV048tYoUfC\/r\/AKbik="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-8oJip361m8OrfLRJOuIeswWKaoxtT27\/wINCxhn+s4c=",

@@ -129,7 +129,7 @@ using SistemadeTickets.Shared;
             ticket = await servicesticket.GetDetails(id);
 
 
-        ticket = new Ticket();
+        
         ticket.Fecha = DateTime.Today;
         
     }

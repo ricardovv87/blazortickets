@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemadeTickets.Shared;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,11 @@ namespace TicketsRepository
 {
     public interface IingenieroRepository
     {
+         Task<bool> InsertIng(Ingeniero ingeniero);
+
+        public Task DeleteIng(int Id);
+
+        Task<IEnumerable<Ingeniero>> GetIngenieros();
+
     }
 }

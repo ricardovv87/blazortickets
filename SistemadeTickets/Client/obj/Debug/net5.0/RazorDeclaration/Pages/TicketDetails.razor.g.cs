@@ -113,7 +113,7 @@ using SistemadeTickets.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 89 "C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Client\Pages\TicketDetails.razor"
+#line 91 "C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Client\Pages\TicketDetails.razor"
        
     public Ticket ticket;
     [Parameter]
@@ -127,9 +127,7 @@ using SistemadeTickets.Shared;
             ticket = await servicesticket.GetDetails(id);
 
         ticket.Fecha = DateTime.Today; 
-        ticket.Estado = "Sin Asignar";
-        ticket.prioridad = "Baja";
-        ticket.Ingeniero = "Sin Asignar";
+       
     }
 
     private async Task Guardar()
@@ -138,7 +136,7 @@ using SistemadeTickets.Shared;
         Home();
     }
 
-    private async Task Home()
+    public async Task Home()
     {
         navigation.NavigateTo("/tablero");
     }

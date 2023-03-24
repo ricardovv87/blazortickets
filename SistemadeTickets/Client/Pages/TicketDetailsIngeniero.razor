@@ -18,7 +18,7 @@
 }else
 {
     
-    <EditForm Model="ticket" OnValidSubmit="Guardar">
+    <EditForm Model="ticket" OnValidSubmit="Guardar" >
 
         <div class="card"> 
           <h5 class="card-header">Formulario de Ticket</h5>
@@ -36,24 +36,24 @@
                       </div>
                         <div class="col-md-4 mb-3">
                           <label for="">Estado</Label>
-                             <select class="form-control" @bind="ticket.Estado">
+                             <InputSelect class="form-control" @bind-Value="ticket.Estado">
                                  <option>Sin Asignar</option>
                                  <option>En Proceso</option>
                                  <option>Resuelto</option>
                                  <option>Cerrado</option>
 
-                             </select>
+                             </InputSelect>
 
                       </div>
                         <div class="col-md-4 mb-3">
                           <label for="">Prioridad</Label>
-                             <select class="form-control" >
+                             <InputSelect class="form-control" @bind-Value="ticket.prioridad">
                                  <option>Baja</option>
                                  <option>Media</option>
                                  <option>Alta</option>
                                  <option>Urgente</option>
 
-                             </select>
+                             </InputSelect>
                       </div>
                         <div class="col-md-6 mb-3">
                           <label for="">Asunto</Label>
@@ -61,7 +61,7 @@
                       </div>
                       <div class="col-md-4 mb-3">
                           <label for="">Asignado A</Label>
-                              <InputText class="form-control" @bind-Value="ticket.Ingeniero" required></InputText>
+                              <InputSelect class="form-control" @bind-Value="ticket.Ingeniero" ></InputSelect>
                       </div>
 
                         <div class="col-md-12 mb-3">
@@ -76,7 +76,7 @@
                       </div>
                       <div class="col-md-4 mb-3">
                           <input type="submit" class="btn btn-success" value="Guardar"/>
-                           <input type="button" class="btn btn-secundary" value="Cancelar"/>
+                           <input type="button" class="btn btn-secundary" value="Cancelar" >
                       </div>
                       <div class="col-mb-4 mb-3">
 
@@ -115,7 +115,7 @@
             ticket = await servicesticket.GetDetails(id);
 
 
-        ticket = new Ticket();
+        
         ticket.Fecha = DateTime.Today;
         
     }

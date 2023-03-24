@@ -12,7 +12,10 @@
     </div>
 }else
 {
-         <button type="button" class="btn btn-primary" @onclick="Nuevo">
+         <button type="button" class="btn btn-primary" @onclick="NuevoUsr">
+             Nuevo Ticket
+         </button>
+         <button type="button" class="btn btn-success" @onclick="NuevoIng">
              Nuevo Ticket
          </button>
           <br/> <br/>
@@ -23,7 +26,9 @@
                 @bind:event="oninput">
                 </div>
          <br/>
-    <table class="table" border="1" data-resizable="true">
+         
+         <div class="table-responsive">
+              <table class="table">
         <thead>
             <tr>
                 <th>Usuario</th>
@@ -67,6 +72,15 @@
         </tbody>
     </table>
 
+         </div>   
+            
+
+     
+
+        
+         
+    
+
 
 
 
@@ -91,7 +105,12 @@
         }
     }
 
-    private async Task Nuevo()
+    private async Task NuevoUsr()
+    {
+        navigation.NavigateTo("/Ticketdetails");
+    }
+
+    private async Task NuevoIng()
     {
         navigation.NavigateTo("/TicketdetailsIngeniero");
     }

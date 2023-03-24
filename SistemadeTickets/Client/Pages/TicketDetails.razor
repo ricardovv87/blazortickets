@@ -35,19 +35,21 @@
                       </div>
                         <div class="col-md-4 mb-3">
                           <label for="">Estado</Label>
-                              <InputText class="form-control" @bind-Value="ticket.Estado" readonly></InputText>
+                              <InputText class="form-control" @bind-Value="ticket.Estado" readonly placeholder="Sin Asignar"></InputText>
                       </div>
+
                         <div class="col-md-4 mb-3">
                           <label for="">Prioridad</Label>
-                              <InputText class="form-control" @bind-Value="ticket.prioridad" readonly></InputText>
+                              <InputText class="form-control" @bind-Value="ticket.prioridad" readonly placeholder="Baja"></InputText>
                       </div>
+
                         <div class="col-md-6 mb-3">
                           <label for="">Asunto</Label>
                               <InputText class="form-control" @bind-Value="ticket.Asunto" required></InputText>
                       </div>
                       <div class="col-md-4 mb-3">
-                          <label for="">Ingeniero que atiende</Label>
-                              <InputText class="form-control" @bind-Value="ticket.Ingeniero" readonly></InputText>
+                          <label for="">Asignado A</Label>
+                              <InputText class="form-control" @bind-Value="ticket.Ingeniero" readonly placeholder="Sin Asignar"></InputText>
                       </div>
 
                         <div class="col-md-12 mb-3">
@@ -62,7 +64,7 @@
                       </div>
                       <div class="col-md-4 mb-3">
                           <input type="submit" class="btn btn-success" value="Guardar"/>
-                           <input type="button" class="btn btn-secundary" value="Cancelar"/>
+                           <input type="button" class="btn btn-secundary" value="Cancelar" />
                       </div>
                       <div class="col-mb-4 mb-3">
 
@@ -94,14 +96,14 @@
     protected async override Task OnInitializedAsync()
     {
         if (id == 0)
-          ticket = new Ticket();
-         else
+            ticket = new Ticket();
+        else
             ticket = await servicesticket.GetDetails(id);
 
-        ticket.Fecha = DateTime.Today; 
+        ticket.Fecha = DateTime.Today;
         ticket.Estado = "Sin Asignar";
         ticket.prioridad = "Baja";
-        ticket.Ingeniero = "Sin Asignar";
+
     }
 
     private async Task Guardar()
@@ -110,7 +112,7 @@
         Home();
     }
 
-    private async Task Home()
+    public async Task Home()
     {
         navigation.NavigateTo("/tablero");
     }
