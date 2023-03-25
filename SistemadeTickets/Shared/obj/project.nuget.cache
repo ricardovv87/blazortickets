@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iXSIo4FnX3p8wCaQte7IVPUdUlWUQ2zH1JrpRHimHWIei107ofG0LC2Piepc/VVQKgxDkpwdc9bSVpW/vQeItg==",
+  "dgSpecHash": "hLmTly9ZjjDOEsEnoiit587hDGWiHA25jZH7eHWJ4OY+A2mn5Ci3ILaBb4Q/3F4JN758l84sfSG6hKRKrh5wAA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj",
+  "projectFilePath": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

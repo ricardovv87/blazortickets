@@ -335,6 +335,25 @@
           "lib/net5.0/Microsoft.JSInterop.WebAssembly.dll": {}
         }
       },
+      "MudBlazor/5.0.11": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "5.0.5",
+          "Microsoft.AspNetCore.Components.Web": "5.0.5"
+        },
+        "compile": {
+          "lib/net5.0/MudBlazor.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/MudBlazor.dll": {}
+        },
+        "build": {
+          "buildTransitive/MudBlazor.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/MudBlazor.props": {}
+        }
+      },
       "System.IO.Pipelines/5.0.2": {
         "type": "package",
         "compile": {
@@ -696,6 +715,25 @@
         },
         "runtime": {
           "lib/net5.0/Microsoft.JSInterop.WebAssembly.dll": {}
+        }
+      },
+      "MudBlazor/5.0.11": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "5.0.5",
+          "Microsoft.AspNetCore.Components.Web": "5.0.5"
+        },
+        "compile": {
+          "lib/net5.0/MudBlazor.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/MudBlazor.dll": {}
+        },
+        "build": {
+          "buildTransitive/MudBlazor.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/MudBlazor.props": {}
         }
       },
       "System.IO.Pipelines/5.0.2": {
@@ -1257,6 +1295,27 @@
         "microsoft.jsinterop.webassembly.nuspec"
       ]
     },
+    "MudBlazor/5.0.11": {
+      "sha512": "s3lHQPFBX18YqvSh/+o/novjluXyJ+ZZRrErS3G6MMRKjYwykqWfMF7l6WyXcRsc9CEqCxPrzSfUd08LoMIj/Q==",
+      "type": "package",
+      "path": "mudblazor/5.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "Nuget.png",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/MudBlazor.props",
+        "buildMultiTargeting/MudBlazor.props",
+        "buildTransitive/MudBlazor.props",
+        "lib/net5.0/MudBlazor.dll",
+        "lib/net5.0/MudBlazor.xml",
+        "mudblazor.5.0.11.nupkg.sha512",
+        "mudblazor.nuspec",
+        "staticwebassets/MudBlazor.min.css",
+        "staticwebassets/MudBlazor.min.js"
+      ]
+    },
     "System.IO.Pipelines/5.0.2": {
       "sha512": "Iew+dfa6FFiyvWBdRmXApixRY1db+beyutpIck4SOSe0NLM8FD/7AD54MscqVLhvfSMLHO7KadjTRT7fqxOGTA==",
       "type": "package",
@@ -1317,28 +1376,29 @@
       "Microsoft.AspNetCore.Components.WebAssembly.Authentication >= 5.0.17",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 5.0.17",
       "Microsoft.Extensions.Http >= 5.0.0",
+      "MudBlazor >= 5.0.11",
       "SistemadeTickets.Shared >= 1.0.0",
       "System.Net.Http.Json >= 5.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ricardo Velazquez\\.nuget\\packages\\": {},
+    "C:\\Users\\redes\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj",
+      "projectUniqueName": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj",
       "projectName": "SistemadeTickets.Client",
-      "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj",
-      "packagesPath": "C:\\Users\\Ricardo Velazquez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Client\\obj\\",
+      "projectPath": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj",
+      "packagesPath": "C:\\Users\\redes\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ricardo Velazquez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\redes\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1353,8 +1413,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj": {
-              "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj"
+            "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj": {
+              "projectPath": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj"
             }
           }
         }
@@ -1386,6 +1446,10 @@
             "target": "Package",
             "version": "[5.0.0, )"
           },
+          "MudBlazor": {
+            "target": "Package",
+            "version": "[5.0.11, )"
+          },
           "System.Net.Http.Json": {
             "target": "Package",
             "version": "[5.0.0, )"
@@ -1404,7 +1468,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.browser-wasm",
-            "version": "[5.0.17, 5.0.17]"
+            "version": "[5.0.15, 5.0.15]"
           }
         ],
         "frameworkReferences": {
@@ -1412,7 +1476,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

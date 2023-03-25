@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MudBlazor.Services;
 using SistemadeTickets.Client.Services;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,7 @@ namespace SistemadeTickets.Client
             
             builder.Services.AddScoped<IservicesIngeniero, ServicesIngeniero>();
             builder.Services.AddScoped<IservicesTicket, ServicesTicket>();
+            builder.Services.AddMudServices();
 
 
             builder.Services.AddApiAuthorization();

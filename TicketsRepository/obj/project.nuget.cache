@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5uxJwkKICw/262WU835B2AYT8BqWiOMQjUUjM3l4zok41ILrhQaax3VgwI4kpViqsxPaUrAPBjZyTD/nQznFmg==",
+  "dgSpecHash": "wTp58UWDftqjGmJyPOTAHMhAqay6SbZP0Cj/Y/wVZjMYatEsNeBUDQY+9VeV5UiA6vSqFsdcGl5Kkog/PUwgng==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\TicketsRepository\\TicketsRepository.csproj",
+  "projectFilePath": "C:\\Users\\redes\\source\\repos\\blazortickets\\TicketsRepository\\TicketsRepository.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Ricardo Velazquez\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512"
+    "C:\\Users\\redes\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512"
   ],
   "logs": []
 }

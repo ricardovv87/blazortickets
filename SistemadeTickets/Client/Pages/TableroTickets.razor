@@ -15,9 +15,13 @@
          <button type="button" class="btn btn-primary" @onclick="NuevoUsr">
              Nuevo Ticket
          </button>
+        
+         <AuthorizeView Roles="Admin">
          <button type="button" class="btn btn-success" @onclick="NuevoIng">
              Nuevo Ticket
          </button>
+         </AuthorizeView>
+        
           <br/> <br/>
 
                 <div class="form-group">

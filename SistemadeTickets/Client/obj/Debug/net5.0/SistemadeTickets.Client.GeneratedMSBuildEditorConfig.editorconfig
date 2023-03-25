@@ -10,4 +10,4 @@ build_property.EnableSingleFileAnalyzer =
 build_property.EnableTrimAnalyzer = true
 build_property.IncludeAllContentForSelfExtract = 
 build_property.RootNamespace = SistemadeTickets.Client
-build_property.ProjectDir = C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Client\
+build_property.ProjectDir = C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\

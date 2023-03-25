@@ -7,4 +7,4 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows,browser
 build_property.RootNamespace = SistemadeTickets.Shared
-build_property.ProjectDir = C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared\
+build_property.ProjectDir = C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Shared\

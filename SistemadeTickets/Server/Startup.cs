@@ -14,6 +14,8 @@ using MySql;
 using TicketsRepository;
 using System.Data;
 using Microsoft.Data.SqlClient;
+using Microsoft.AspNetCore.Identity;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace SistemadeTickets.Server
 {
@@ -34,7 +36,7 @@ namespace SistemadeTickets.Server
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-
+            //Servicios configurados 
             services.AddScoped<ITicketRepository,TicketRepository> ();
             services.AddScoped<IingenieroRepository, IngenieroRepository>();
             services.AddSingleton<IDbConnection>((sp) => new SqlConnection(this.Configuration.GetConnectionString("DefaultConnection")));
@@ -43,10 +45,19 @@ namespace SistemadeTickets.Server
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+             
 
+            //services.AddIdentityServer()
+            //    .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
             services.AddIdentityServer()
-                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+            .AddApiAuthorization<ApplicationUser, ApplicationDbContext>(opt =>
+                    {
+                        opt.IdentityResources["openid"].UserClaims.Add("role");
+                        opt.ApiResources.Single().UserClaims.Add("role");
+                    });
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("role");
 
             services.AddAuthentication()
                 .AddIdentityServerJwt();

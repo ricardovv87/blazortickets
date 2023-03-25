@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Server\\SistemadeTickets.Server.csproj": {}
+    "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Server\\SistemadeTickets.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj": {
+    "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj",
+        "projectUniqueName": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj",
         "projectName": "SistemadeTickets.Client",
-        "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj",
-        "packagesPath": "C:\\Users\\Ricardo Velazquez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Client\\obj\\",
+        "projectPath": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj",
+        "packagesPath": "C:\\Users\\redes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ricardo Velazquez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\redes\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj": {
-                "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj"
+              "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj": {
+                "projectPath": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj"
               }
             }
           }
@@ -65,6 +65,10 @@
               "target": "Package",
               "version": "[5.0.0, )"
             },
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
             "System.Net.Http.Json": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -83,7 +87,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.browser-wasm",
-              "version": "[5.0.17, 5.0.17]"
+              "version": "[5.0.15, 5.0.15]"
             }
           ],
           "frameworkReferences": {
@@ -91,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -100,20 +104,20 @@
         }
       }
     },
-    "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Server\\SistemadeTickets.Server.csproj": {
+    "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Server\\SistemadeTickets.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Server\\SistemadeTickets.Server.csproj",
+        "projectUniqueName": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Server\\SistemadeTickets.Server.csproj",
         "projectName": "SistemadeTickets.Server",
-        "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Server\\SistemadeTickets.Server.csproj",
-        "packagesPath": "C:\\Users\\Ricardo Velazquez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Server\\obj\\",
+        "projectPath": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Server\\SistemadeTickets.Server.csproj",
+        "packagesPath": "C:\\Users\\redes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ricardo Velazquez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\redes\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -128,14 +132,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj": {
-                "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj"
+              "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj": {
+                "projectPath": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Client\\SistemadeTickets.Client.csproj"
               },
-              "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj": {
-                "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj"
+              "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj": {
+                "projectPath": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj"
               },
-              "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\TicketsRepository\\TicketsRepository.csproj": {
-                "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\TicketsRepository\\TicketsRepository.csproj"
+              "C:\\Users\\redes\\source\\repos\\blazortickets\\TicketsRepository\\TicketsRepository.csproj": {
+                "projectPath": "C:\\Users\\redes\\source\\repos\\blazortickets\\TicketsRepository\\TicketsRepository.csproj"
               }
             }
           }
@@ -205,24 +209,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj": {
+    "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj",
         "projectName": "SistemadeTickets.Shared",
-        "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj",
-        "packagesPath": "C:\\Users\\Ricardo Velazquez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj",
+        "packagesPath": "C:\\Users\\redes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ricardo Velazquez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\redes\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -263,24 +267,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\TicketsRepository\\TicketsRepository.csproj": {
+    "C:\\Users\\redes\\source\\repos\\blazortickets\\TicketsRepository\\TicketsRepository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\TicketsRepository\\TicketsRepository.csproj",
+        "projectUniqueName": "C:\\Users\\redes\\source\\repos\\blazortickets\\TicketsRepository\\TicketsRepository.csproj",
         "projectName": "TicketsRepository",
-        "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\TicketsRepository\\TicketsRepository.csproj",
-        "packagesPath": "C:\\Users\\Ricardo Velazquez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\TicketsRepository\\obj\\",
+        "projectPath": "C:\\Users\\redes\\source\\repos\\blazortickets\\TicketsRepository\\TicketsRepository.csproj",
+        "packagesPath": "C:\\Users\\redes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\redes\\source\\repos\\blazortickets\\TicketsRepository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ricardo Velazquez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\redes\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -295,8 +299,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj": {
-                "projectPath": "C:\\Users\\Ricardo Velazquez\\source\\repos\\SistemadeTickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj"
+              "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj": {
+                "projectPath": "C:\\Users\\redes\\source\\repos\\blazortickets\\SistemadeTickets\\Shared\\SistemadeTickets.Shared.csproj"
               }
             }
           }
@@ -331,7 +335,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

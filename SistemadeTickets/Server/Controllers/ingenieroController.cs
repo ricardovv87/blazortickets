@@ -21,7 +21,7 @@ namespace SistemadeTickets.Server.Controllers
         [HttpPost]
         public async Task<IActionResult> post([FromBody] Ingeniero ingeniero) 
         {
-            if (ingeniero.Nombre == string.Empty)
+            if (ingeniero.ingeniero == string.Empty)
             {
                 return BadRequest();
             }

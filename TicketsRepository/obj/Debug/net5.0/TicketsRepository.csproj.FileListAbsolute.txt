@@ -13,3 +13,18 @@ C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\TicketsRepository\obj\D
 C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\TicketsRepository\obj\Debug\net5.0\refint\TicketsRepository.dll
 C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\TicketsRepository\obj\Debug\net5.0\TicketsRepository.pdb
 C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\TicketsRepository\obj\Debug\net5.0\ref\TicketsRepository.dll
+C:\Users\redes\source\repos\blazortickets\TicketsRepository\bin\Debug\net5.0\TicketsRepository.deps.json
+C:\Users\redes\source\repos\blazortickets\TicketsRepository\bin\Debug\net5.0\TicketsRepository.dll
+C:\Users\redes\source\repos\blazortickets\TicketsRepository\bin\Debug\net5.0\TicketsRepository.pdb
+C:\Users\redes\source\repos\blazortickets\TicketsRepository\bin\Debug\net5.0\SistemadeTickets.Shared.dll
+C:\Users\redes\source\repos\blazortickets\TicketsRepository\bin\Debug\net5.0\SistemadeTickets.Shared.pdb
+C:\Users\redes\source\repos\blazortickets\TicketsRepository\obj\Debug\net5.0\TicketsRepository.csproj.AssemblyReference.cache
+C:\Users\redes\source\repos\blazortickets\TicketsRepository\obj\Debug\net5.0\TicketsRepository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\redes\source\repos\blazortickets\TicketsRepository\obj\Debug\net5.0\TicketsRepository.AssemblyInfoInputs.cache
+C:\Users\redes\source\repos\blazortickets\TicketsRepository\obj\Debug\net5.0\TicketsRepository.AssemblyInfo.cs
+C:\Users\redes\source\repos\blazortickets\TicketsRepository\obj\Debug\net5.0\TicketsRepository.csproj.CoreCompileInputs.cache
+C:\Users\redes\source\repos\blazortickets\TicketsRepository\obj\Debug\net5.0\TicketsRepository.csproj.CopyComplete
+C:\Users\redes\source\repos\blazortickets\TicketsRepository\obj\Debug\net5.0\TicketsRepository.dll
+C:\Users\redes\source\repos\blazortickets\TicketsRepository\obj\Debug\net5.0\refint\TicketsRepository.dll
+C:\Users\redes\source\repos\blazortickets\TicketsRepository\obj\Debug\net5.0\TicketsRepository.pdb
+C:\Users\redes\source\repos\blazortickets\TicketsRepository\obj\Debug\net5.0\ref\TicketsRepository.dll

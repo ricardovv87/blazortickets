@@ -1,0 +1,57 @@
+﻿@page "/listaingenieros"
+@inject IservicesIngeniero ServicesIngeniero
+
+<h3>ListaIngenieros</h3>
+
+@if (ingeniero == null)
+{
+    <div class="d-flex align-items-center">
+  <strong>Cargando...</strong>
+  <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+    </div>
+}else
+{
+    
+    <table>
+        <Thead>
+            <tr>
+                <th>Ingenieros</th>
+            </tr>
+        </Thead>
+        <tbody>
+            @foreach (var item in ingeniero)
+           {
+               <tr>
+                   <td>@item.ingeniero</td>
+               </tr>
+           }
+        </tbody>
+
+
+    </table>
+
+
+
+}
+
+
+
+
+
+@code {
+    IEnumerable<Ingeniero> ingeniero;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            ingeniero = await ServicesIngeniero.GetIngenieros();
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+
+}

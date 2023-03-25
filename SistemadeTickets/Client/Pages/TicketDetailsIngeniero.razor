@@ -27,46 +27,45 @@
 
                   <div class="row">
                       <div class="col-md-6 mb-3">
-                          <label for="">Usuario</Label>
-                              <InputText class="form-control" @bind-Value="ticket.Usuario" required></InputText>
+                            <MudTextField @bind-Value="ticket.Usuario"Label="Usuario" Variant="Variant.Text" Margin="Margin.Dense"></MudTextField>
                       </div>
-                       <div class="col-md-3 ">
-                          <label for="">Fecha de Solicitud</Label>
-                              <InputDate class="form-control" @bind-Value="ticket.Fecha"></InputDate>
+                       <div class="col-md-3 ">                     
+                        <MudDatePicker Label="Fecha" @bind-Value="ticket.Fecha" />
                       </div>
                         <div class="col-md-4 mb-3">
-                          <label for="">Estado</Label>
-                             <InputSelect class="form-control" @bind-Value="ticket.Estado">
-                                 <option>Sin Asignar</option>
-                                 <option>En Proceso</option>
-                                 <option>Resuelto</option>
-                                 <option>Cerrado</option>
+                       <MudSelect T="string" Label="Estado" @bind-Value="ticket.Estado">
+                             <MudSelectItem Value="@("Abierto")"/>
+                             <MudSelectItem Value="@("En Proceso")"/>
+                             <MudSelectItem Value="@("Resuelto")"/>
+                             <MudSelectItem Value="@("Cerrado")"/>
+                       </MudSelect>
 
-                             </InputSelect>
 
                       </div>
                         <div class="col-md-4 mb-3">
-                          <label for="">Prioridad</Label>
-                             <InputSelect class="form-control" @bind-Value="ticket.prioridad">
-                                 <option>Baja</option>
-                                 <option>Media</option>
-                                 <option>Alta</option>
-                                 <option>Urgente</option>
-
-                             </InputSelect>
+                             <MudSelect T="string" Label="Prioridad" @bind-Value="ticket.prioridad">
+                                <MudSelectItem Value="@("Baja")"/>
+                                <MudSelectItem Value="@("Media")"/>
+                                <MudSelectItem Value="@("Alta")"/>
+                                <MudSelectItem Value="@("Urgente")"/>
+                             </MudSelect>
                       </div>
                         <div class="col-md-6 mb-3">
-                          <label for="">Asunto</Label>
-                              <InputText class="form-control" @bind-Value="ticket.Asunto" required></InputText>
+                          <MudTextField @bind-Value="ticket.Asunto"Label="Asunto" Variant="Variant.Text" Margin="Margin.Dense"></MudTextField>
                       </div>
                       <div class="col-md-4 mb-3">
-                          <label for="">Asignado A</Label>
-                              <InputSelect class="form-control" @bind-Value="ticket.Ingeniero" ></InputSelect>
+                              <MudSelect @bind-Value="@ticket.Ingeniero" Label="Asignar Ingeniero">
+                                   @foreach ( var item in ingeniero)
+                                     {
+                                        <MudSelectItem Value="@item.ingeniero">@item.ingeniero</MudSelectItem>
+                                     }
+                              </MudSelect>
+
                       </div>
 
                         <div class="col-md-12 mb-3">
                           <label for="">Mensaje</Label>
-                              <InputTextArea class="form-control" @bind-Value="ticket.Mensaje" required></InputTextArea>
+                            <MudTextField @bind-Value="ticket.Mensaje"Label="Describa el problema" Variant="Variant.Text" Margin="Margin.Dense" ></MudTextField>
                       </div>
                   </div>
 
@@ -102,22 +101,35 @@
 
 @code {
     public Ticket ticket;
-    public Ingeniero ingeniero;
+    DateTime? date = DateTime.Today;
+    IEnumerable<Ingeniero> ingeniero;
+    
 
     [Parameter]
     public int id { get; set; }
 
     protected async override Task OnInitializedAsync()
     {
-        if (id == 0)
-            ticket = new Ticket();
-         else
-            ticket = await servicesticket.GetDetails(id);
+        try
+        {
+           
+            ingeniero = await ServicesIngeniero.GetIngenieros();
+
+            if (id == 0)
+
+                ticket = new Ticket();
+
+            else
+                ticket = await servicesticket.GetDetails(id);
+                ticket.Fecha = DateTime.Today;
 
 
-        
-        ticket.Fecha = DateTime.Today;
-        
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+
     }
 
     private async Task Guardar()

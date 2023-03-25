@@ -10,3 +10,15 @@ C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared
 C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared\obj\Debug\net5.0\refint\SistemadeTickets.Shared.dll
 C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared\obj\Debug\net5.0\SistemadeTickets.Shared.pdb
 C:\Users\Ricardo Velazquez\source\repos\SistemadeTickets\SistemadeTickets\Shared\obj\Debug\net5.0\ref\SistemadeTickets.Shared.dll
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Shared\bin\Debug\net5.0\SistemadeTickets.Shared.deps.json
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Shared\bin\Debug\net5.0\SistemadeTickets.Shared.dll
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Shared\bin\Debug\net5.0\SistemadeTickets.Shared.pdb
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Shared\obj\Debug\net5.0\SistemadeTickets.Shared.csproj.AssemblyReference.cache
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Shared\obj\Debug\net5.0\SistemadeTickets.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Shared\obj\Debug\net5.0\SistemadeTickets.Shared.AssemblyInfoInputs.cache
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Shared\obj\Debug\net5.0\SistemadeTickets.Shared.AssemblyInfo.cs
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Shared\obj\Debug\net5.0\SistemadeTickets.Shared.csproj.CoreCompileInputs.cache
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Shared\obj\Debug\net5.0\SistemadeTickets.Shared.dll
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Shared\obj\Debug\net5.0\refint\SistemadeTickets.Shared.dll
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Shared\obj\Debug\net5.0\SistemadeTickets.Shared.pdb
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Shared\obj\Debug\net5.0\ref\SistemadeTickets.Shared.dll

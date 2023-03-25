@@ -38,7 +38,7 @@ namespace TicketsRepository
                     var result = await _dbconnection.ExecuteAsync(
                             sql, new
                             {
-                                ingeniero.Nombre
+                                ingeniero.ingeniero
                             });
                     return result > 0;
                 }
