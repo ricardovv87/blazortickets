@@ -127,12 +127,13 @@ using MudBlazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 102 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TicketDetailsIngeniero.razor"
+#line 104 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TicketDetailsIngeniero.razor"
        
     public Ticket ticket;
-    DateTime? date = DateTime.Today;
+
     IEnumerable<Ingeniero> ingeniero;
-    
+
+
 
     [Parameter]
     public int id { get; set; }
@@ -141,17 +142,15 @@ using MudBlazor.Services;
     {
         try
         {
-           
+
             ingeniero = await ServicesIngeniero.GetIngenieros();
 
             if (id == 0)
 
-                ticket = new Ticket();
+                ticket = new Ticket() {Fecha = DateTime.Today };
 
             else
                 ticket = await servicesticket.GetDetails(id);
-                ticket.Fecha = DateTime.Today;
-
 
         }
         catch (Exception e)

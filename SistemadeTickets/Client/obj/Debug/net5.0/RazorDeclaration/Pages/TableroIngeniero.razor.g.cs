@@ -117,9 +117,8 @@ using MudBlazor.Services;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Ticketdetails")]
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Ticketdetails/{id:int}")]
-    public partial class TicketDetails___Copia : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/tableroingenieros")]
+    public partial class TableroIngeniero : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -127,35 +126,47 @@ using MudBlazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 91 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TicketDetails - Copia.razor"
+#line 95 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TableroIngeniero.razor"
        
-    public Ticket ticket;
-    [Parameter]
-    public int id { get; set; }
+    IEnumerable<Ticket> ticket;
+    public string Filter { get; set; }
 
-    protected async override Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
-        if (id == 0)
-            ticket = new Ticket();
-        else
-            ticket = await servicesticket.GetDetails(id);
-
-        ticket.Fecha = DateTime.Today;
-        ticket.Estado = "Sin Asignar";
-        ticket.prioridad = "Baja";
-
+        try
+        {
+            ticket = await servicesticket.GetTicket();
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
     }
 
-    private async Task Guardar()
+    private async Task NuevoUsr()
     {
-        await servicesticket.SaveTicket(ticket);
-        Home();
+        navigation.NavigateTo("/Ticketdetails");
     }
 
-    public async Task Home()
+    private async Task NuevoIng()
     {
-        navigation.NavigateTo("/tablero");
+        navigation.NavigateTo("/TicketdetailsIngeniero");
     }
+
+    public bool IsVisible(Ticket filtro)
+    {
+        if (string.IsNullOrEmpty(Filter))
+            return true;
+
+        if (filtro.Usuario.Contains(Filter, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        if (filtro.Asunto.Contains(Filter, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        return false;
+    }
+
 
 
 

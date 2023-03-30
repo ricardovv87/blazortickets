@@ -6,7 +6,7 @@
 @inject IservicesIngeniero ServicesIngeniero
 
 
-<h3></h3>
+
 
 
 @if (ticket == null)
@@ -29,8 +29,10 @@
                       <div class="col-md-6 mb-3">
                             <MudTextField @bind-Value="ticket.Usuario"Label="Usuario" Variant="Variant.Text" Margin="Margin.Dense"></MudTextField>
                       </div>
-                       <div class="col-md-3 ">                     
-                        <MudDatePicker Label="Fecha" @bind-Value="ticket.Fecha" />
+                       <div class="col-md-3 ">  
+                           <MudText>Fecha</MudText>
+                          <MudDatePicker  Date="ticket.Fecha"></MudDatePicker>
+                      
                       </div>
                         <div class="col-md-4 mb-3">
                        <MudSelect T="string" Label="Estado" @bind-Value="ticket.Estado">
@@ -75,7 +77,7 @@
                       </div>
                       <div class="col-md-4 mb-3">
                           <input type="submit" class="btn btn-success" value="Guardar"/>
-                           <input type="button" class="btn btn-secundary" value="Cancelar" >
+                           <input type="button" class="btn btn-secundary" value="Cancelar" @onclick="Home">
                       </div>
                       <div class="col-mb-4 mb-3">
 
@@ -92,7 +94,7 @@
     </EditForm>
 
 
-
+    
 
 }
 
@@ -101,9 +103,10 @@
 
 @code {
     public Ticket ticket;
-    DateTime? date = DateTime.Today;
+
     IEnumerable<Ingeniero> ingeniero;
-    
+
+
 
     [Parameter]
     public int id { get; set; }
@@ -112,17 +115,15 @@
     {
         try
         {
-           
+
             ingeniero = await ServicesIngeniero.GetIngenieros();
 
             if (id == 0)
 
-                ticket = new Ticket();
+                ticket = new Ticket() {Fecha = DateTime.Today };
 
             else
                 ticket = await servicesticket.GetDetails(id);
-                ticket.Fecha = DateTime.Today;
-
 
         }
         catch (Exception e)

@@ -1,5 +1,5 @@
-﻿@page "/Ticketdetails"
-@page "/Ticketdetails/{id:int}"
+﻿@page "/VistaTicket"
+@page "/VistaTicket/{id:int}"
 
 @inject NavigationManager navigation
 @inject IservicesTicket servicesticket
@@ -17,21 +17,22 @@
 }else
 {
     
-    <EditForm Model="ticket" OnValidSubmit="Guardar">
+    
+ <EditForm Model="ticket" >
 
         <div class="card"> 
-          <h5 class="card-header">Formulario de Ticket</h5>
+          <h5 class="card-header">Vista de Ticket</h5>
           <div class="card-body">
               <div class="container">
 
                   <div class="row">
                       <div class="col-md-6 mb-3">
                           <label for="">Usuario</Label>
-                              <InputText class="form-control" @bind-Value="ticket.Usuario" required></InputText>
+                              <InputText class="form-control" @bind-Value="ticket.Usuario" readonly></InputText>
                       </div>
                        <div class="col-md-3 ">
                           <label for="">Fecha de Solicitud</Label>
-                              <InputDate class="form-control" @bind-Value="ticket.Fecha"></InputDate>
+                              <InputDate class="form-control" @bind-Value="ticket.Fecha" readonly></InputDate>
                       </div>
                         <div class="col-md-4 mb-3">
                           <label for="">Estado</Label>
@@ -45,7 +46,7 @@
 
                         <div class="col-md-6 mb-3">
                           <label for="">Asunto</Label>
-                              <InputText class="form-control" @bind-Value="ticket.Asunto" required></InputText>
+                              <InputText class="form-control" @bind-Value="ticket.Asunto" readonly></InputText>
                       </div>
                       <div class="col-md-4 mb-3">
                           <label for="">Asignado A</Label>
@@ -54,17 +55,16 @@
 
                         <div class="col-md-12 mb-3">
                           <label for="">Mensaje</Label>
-                              <InputTextArea class="form-control" @bind-Value="ticket.Mensaje" required></InputTextArea>
+                              <InputTextArea class="form-control" @bind-Value="ticket.Mensaje" readonly></InputTextArea>
                       </div>
                   </div>
-
                   <div class="row">
                       <div class="col-mb-4 mb-3">
 
                       </div>
                       <div class="col-md-4 mb-3">
-                          <input type="submit" class="btn btn-success" value="Guardar"/>
-                           <input type="button" class="btn btn-secundary" value="Cancelar" @onclick="Home"/>
+                          @* <input type="button" class="btn btn-info" value="Volver" @onclick="Home"/>*@
+                           <MudButton ButtonType="ButtonType.Button" Color="Color.Info" @onclick="Home">Volver</MudButton>
                       </div>
                       <div class="col-mb-4 mb-3">
 
@@ -75,12 +75,17 @@
 
               </div>
           </div>
-        </div>
 
+        </div>
 
     </EditForm>
 
+    
+
    
+    
+    
+    
 
 
 }
@@ -95,22 +100,11 @@
 
     protected async override Task OnInitializedAsync()
     {
-        if (id == 0)
-            ticket = new Ticket();
-        else
+ 
             ticket = await servicesticket.GetDetails(id);
 
-        ticket.Fecha = DateTime.Today;
-        ticket.Estado = "Sin Asignar";
-        ticket.prioridad = "Baja";
-
     }
 
-    private async Task Guardar()
-    {
-        await servicesticket.SaveTicket(ticket);
-        Home();
-    }
 
     public async Task Home()
     {

@@ -78,6 +78,14 @@ namespace TicketsRepository
             }
         }
 
+        //public async Task<IEnumerable<Ticket>> SoloAbiertos()
+        //{
+        //    var sql = @"SELECT Id,Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje FROM Ticket where Estado != 'Cerrado'";
+
+        //    return await _dbConnection.QueryAsync<Ticket>(sql, new { });
+
+        //}
+
         public async Task<bool> UpdateTicket(Ticket ticket)
         {
             try

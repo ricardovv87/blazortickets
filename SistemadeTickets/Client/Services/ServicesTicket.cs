@@ -42,5 +42,10 @@ namespace SistemadeTickets.Client.Services
                 await _httpclient.PutAsJsonAsync<Ticket>($"api/tickets/{Ticket.Id}", Ticket);
             }
         }
+
+        //public async Task<IEnumerable<Ticket>> SoloAbiertos()
+        //{
+        //    return await _httpclient.GetFromJsonAsync<IEnumerable<Ticket>>($"api/tickets");
+        //}
     }
 }

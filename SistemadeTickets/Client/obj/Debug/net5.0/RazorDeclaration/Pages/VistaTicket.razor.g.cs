@@ -117,9 +117,9 @@ using MudBlazor.Services;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Ticketdetails")]
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Ticketdetails/{id:int}")]
-    public partial class TicketDetails___Copia : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/VistaTicket")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/VistaTicket/{id:int}")]
+    public partial class VistaTicket : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -127,7 +127,7 @@ using MudBlazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 91 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TicketDetails - Copia.razor"
+#line 96 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\VistaTicket.razor"
        
     public Ticket ticket;
     [Parameter]
@@ -135,22 +135,11 @@ using MudBlazor.Services;
 
     protected async override Task OnInitializedAsync()
     {
-        if (id == 0)
-            ticket = new Ticket();
-        else
+ 
             ticket = await servicesticket.GetDetails(id);
 
-        ticket.Fecha = DateTime.Today;
-        ticket.Estado = "Sin Asignar";
-        ticket.prioridad = "Baja";
-
     }
 
-    private async Task Guardar()
-    {
-        await servicesticket.SaveTicket(ticket);
-        Home();
-    }
 
     public async Task Home()
     {

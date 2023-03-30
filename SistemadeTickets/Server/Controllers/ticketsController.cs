@@ -21,13 +21,13 @@ namespace SistemadeTickets.Server.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> post([FromBody]Ticket ticket)
+        public async Task<IActionResult> post([FromBody] Ticket ticket)
         {
             if (ticket == null)
             {
                 return BadRequest();
             }
-            if (string .IsNullOrEmpty(ticket.Usuario))
+            if (string.IsNullOrEmpty(ticket.Usuario))
             {
                 ModelState.AddModelError("Usuario", "Usuario no puede estar Vacio");
             }
@@ -55,11 +55,16 @@ namespace SistemadeTickets.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Ticket>> Get() 
+        public async Task<IEnumerable<Ticket>> Get()
         {
             return await _ticketRepository.GetTickets();
         }
 
+        //[HttpGet]
+        //public async Task<IEnumerable<Ticket>> Abiertos() 
+        //{
+        //    return await _ticketRepository.SoloAbiertos();
+        //}
 
         [HttpGet("{Id}")]
         public async Task<Ticket> get(int Id) 

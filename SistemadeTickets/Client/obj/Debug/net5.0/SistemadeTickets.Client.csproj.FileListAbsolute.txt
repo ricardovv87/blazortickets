@@ -1309,3 +1309,7 @@ C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\bin\Debug\net5
 C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\build-gz\FMH54t4G.gz
 C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\RazorDeclaration\Pages\ListaIngenieros.razor.g.cs
 C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\Razor\Pages\ListaIngenieros.razor.g.cs
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\RazorDeclaration\Pages\TableroIngeniero.razor.g.cs
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\Razor\Pages\TableroIngeniero.razor.g.cs
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\RazorDeclaration\Pages\VistaTicket.razor.g.cs
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\Razor\Pages\VistaTicket.razor.g.cs
