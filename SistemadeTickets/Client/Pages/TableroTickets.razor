@@ -3,6 +3,7 @@
 @inject IservicesTicket servicesticket
 
 <h3>Tablero de Tickets</h3>
+@Message
 
 @if (ticket == null)
 {
@@ -38,6 +39,7 @@
                 <th>Asunto</th>
                 <th>Ingeniero</th>
                 <th>Mensaje</th>
+               
 
                
             </tr>
@@ -60,6 +62,7 @@
                    <td>@solicitud.Asunto</td>
                    <td>@solicitud.Ingeniero</td>
                    <td>@solicitud.Mensaje</td>
+                   
                    
                   
                </tr>
@@ -87,16 +90,18 @@
 @code {
     IEnumerable<Ticket> ticket;
     public string Filter { get; set; }
+    public string Message { get; set; }
+
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            ticket = await servicesticket.GetTicket();
+            ticket = await servicesticket.Abiertos();
         }
         catch (Exception e)
         {
-            throw e;
+          Message = "Error encontrado..." + e.Message;
         }
     }
 

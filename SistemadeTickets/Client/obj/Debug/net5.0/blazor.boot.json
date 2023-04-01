@@ -199,15 +199,15 @@
       "mscorlib.dll": "sha256-CbcIR45\/xUFaZJqGIle6bb7v2kWYjp4kOFpKNnCkd4I=",
       "netstandard.dll": "sha256-qE0Q70OyVlHYY\/Y3nwMjfh+zissea9uhfvWMvPWfI7w=",
       "System.Private.CoreLib.dll": "sha256-pdkcl2+OojCfrhxX5eFmKI30wAmhL6s+sCLp7s175k0=",
-      "SistemadeTickets.Shared.dll": "sha256-TInwd7txvve01mXG7yLBAkYahnUPyP4AGotTJEpe4qs=",
-      "SistemadeTickets.Client.dll": "sha256-mDtAaJtWPg+15fihKjoxTEhMmGnsRwy9vHntyyW0B5c="
+      "SistemadeTickets.Shared.dll": "sha256-tC2PUpAy6\/UgO1ZEHU8GmJCB25NYGr1rhJa5zpf6znU=",
+      "SistemadeTickets.Client.dll": "sha256-T1ooeAQ55hifTVnXgddFxDx0RK6eSP0YSIAJAGFNsTE="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "SistemadeTickets.Shared.pdb": "sha256-\/BBerG8M+GcfGiwxRI+90yGOLVkbKUWcwd57QRGWygA=",
-      "SistemadeTickets.Client.pdb": "sha256-lPXb\/mDptooYeUj22M1nSpgSN7n38M95k5eUEcRm1+U="
+      "SistemadeTickets.Shared.pdb": "sha256-F9WZdY2r76rDNW\/qZI1q4zcI7nV9TW9BeZMT5P26kps=",
+      "SistemadeTickets.Client.pdb": "sha256-wTyJvvxe3CIygu+stncJU6PJJGMjCDIUFLG2Ho60ph0="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-ootDKSA6cNAbgJLmPhrHsPVvVqkGEYdRZxucC22LWjw=",

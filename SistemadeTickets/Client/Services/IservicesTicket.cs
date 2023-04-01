@@ -16,7 +16,7 @@ namespace SistemadeTickets.Client.Services
 
         Task<Ticket> GetDetails(int Id);
 
-        //Task<IEnumerable<Ticket>> SoloAbiertos();
+        Task<IEnumerable<Ticket>> Abiertos();
 
 
     }

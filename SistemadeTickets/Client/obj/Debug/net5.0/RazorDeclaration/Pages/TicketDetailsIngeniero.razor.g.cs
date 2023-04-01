@@ -127,12 +127,12 @@ using MudBlazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 104 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TicketDetailsIngeniero.razor"
+#line 118 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TicketDetailsIngeniero.razor"
        
     public Ticket ticket;
-
+    public string MensajeInge = string.Empty;
     IEnumerable<Ingeniero> ingeniero;
-
+    public bool FS { get; set; }
 
 
     [Parameter]
@@ -147,7 +147,7 @@ using MudBlazor.Services;
 
             if (id == 0)
 
-                ticket = new Ticket() {Fecha = DateTime.Today };
+                ticket = new Ticket() {Fecha = DateTime.Today,IngenieroMensaje = MensajeInge};
 
             else
                 ticket = await servicesticket.GetDetails(id);
@@ -169,7 +169,7 @@ using MudBlazor.Services;
 
     private async Task Home()
     {
-        navigation.NavigateTo("/tablero");
+        navigation.NavigateTo("/tableroIngenieros");
     }
 
 

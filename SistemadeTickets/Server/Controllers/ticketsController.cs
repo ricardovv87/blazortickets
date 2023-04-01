@@ -54,17 +54,17 @@ namespace SistemadeTickets.Server.Controllers
 
         }
 
-        [HttpGet]
+        [HttpGet("all")]
         public async Task<IEnumerable<Ticket>> Get()
         {
             return await _ticketRepository.GetTickets();
         }
 
-        //[HttpGet]
-        //public async Task<IEnumerable<Ticket>> Abiertos() 
-        //{
-        //    return await _ticketRepository.SoloAbiertos();
-        //}
+        [HttpGet]
+        public async Task<IEnumerable<Ticket>> Abiertos()
+        {
+            return await _ticketRepository.SoloAbiertos();
+        }
 
         [HttpGet("{Id}")]
         public async Task<Ticket> get(int Id) 

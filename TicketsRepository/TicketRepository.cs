@@ -34,7 +34,9 @@ namespace TicketsRepository
                                 Prioridad, 
                                 Asunto,
                                 Ingeniero,
-                                Mensaje FROM Ticket WHERE Id =@Id";
+                                Mensaje,
+                                IngenieroMensaje,
+                                FechaSolucion FROM Ticket WHERE Id =@Id";
 
             return await _dbConnection.QueryFirstOrDefaultAsync<Ticket>(
                 sql, new { Id = Id });
@@ -44,7 +46,7 @@ namespace TicketsRepository
 
         public async Task<IEnumerable<Ticket>> GetTickets()
         {
-            var sql = @"SELECT Id,Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje FROM Ticket";
+            var sql = @"SELECT Id,Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje, IngenieroMensaje, FechaSolucion FROM Ticket";
 
             return await _dbConnection.QueryAsync<Ticket>(sql, new {});
         }
@@ -53,8 +55,8 @@ namespace TicketsRepository
         {
             try
             {
-                var sql = @"INSERT INTO Ticket (Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje)
-                                                VALUES(@Usuario, @Fecha, @Estado, @Prioridad, @Asunto, @Ingeniero, @Mensaje)";
+                var sql = @"INSERT INTO Ticket (Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje, IngenieroMensaje)
+                                                VALUES(@Usuario, @Fecha, @Estado, @Prioridad, @Asunto, @Ingeniero, @Mensaje, @IngenieroMensaje)";
 
                 var result = await _dbConnection.ExecuteAsync(
                     sql, new
@@ -65,9 +67,11 @@ namespace TicketsRepository
                         ticket.prioridad,
                         ticket.Asunto,
                         ticket.Ingeniero,
-                        ticket.Mensaje
+                        ticket.Mensaje,
+                        ticket.IngenieroMensaje,
                         
-                        
+
+
                     });
                 return result > 0;
 
@@ -78,13 +82,13 @@ namespace TicketsRepository
             }
         }
 
-        //public async Task<IEnumerable<Ticket>> SoloAbiertos()
-        //{
-        //    var sql = @"SELECT Id,Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje FROM Ticket where Estado != 'Cerrado'";
+        public async Task<IEnumerable<Ticket>> SoloAbiertos()
+        {
+            var sql = @"SELECT Id,Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje FROM Ticket where Estado != 'Cerrado'";
 
-        //    return await _dbConnection.QueryAsync<Ticket>(sql, new { });
+            return await _dbConnection.QueryAsync<Ticket>(sql, new { });
 
-        //}
+        }
 
         public async Task<bool> UpdateTicket(Ticket ticket)
         {
@@ -96,7 +100,9 @@ namespace TicketsRepository
                                                 Prioridad =@Prioridad,
                                                 Asunto =@Asunto,
                                                 Ingeniero =@Ingeniero,
-                                                Mensaje =@Mensaje WHERE Id = @Id";
+                                                IngenieroMensaje =@IngenieroMensaje,
+                                                Mensaje =@Mensaje,
+                                                FechaSolucion =@FechaSolucion WHERE Id = @Id";
                                                 
                 var result = await _dbConnection.ExecuteAsync(
                     sql, new
@@ -108,6 +114,8 @@ namespace TicketsRepository
                         ticket.Asunto,
                         ticket.Ingeniero,
                         ticket.Mensaje,
+                        ticket.IngenieroMensaje,
+                        ticket.FechaSolucion,
                         ticket.Id
                     });
                 return result > 0;

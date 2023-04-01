@@ -28,7 +28,7 @@ namespace SistemadeTickets.Client.Services
 
         public async Task<IEnumerable<Ticket>> GetTicket()
         {
-         return await _httpclient.GetFromJsonAsync<IEnumerable<Ticket>>($"api/tickets");
+            return await _httpclient.GetFromJsonAsync<IEnumerable<Ticket>>($"api/tickets/all");
         }
 
         public async Task SaveTicket(Ticket Ticket)
@@ -43,9 +43,9 @@ namespace SistemadeTickets.Client.Services
             }
         }
 
-        //public async Task<IEnumerable<Ticket>> SoloAbiertos()
-        //{
-        //    return await _httpclient.GetFromJsonAsync<IEnumerable<Ticket>>($"api/tickets");
-        //}
+        public async Task<IEnumerable<Ticket>> Abiertos()
+        {
+            return await _httpclient.GetFromJsonAsync<IEnumerable<Ticket>>($"api/tickets");
+        }
     }
 }

@@ -30,8 +30,7 @@
                             <MudTextField @bind-Value="ticket.Usuario"Label="Usuario" Variant="Variant.Text" Margin="Margin.Dense"></MudTextField>
                       </div>
                        <div class="col-md-3 ">  
-                           <MudText>Fecha</MudText>
-                          <MudDatePicker  Date="ticket.Fecha"></MudDatePicker>
+                           <MudDatePicker Label="Fecha" Date="ticket.Fecha"></MudDatePicker>
                       
                       </div>
                         <div class="col-md-4 mb-3">
@@ -52,7 +51,7 @@
                                 <MudSelectItem Value="@("Urgente")"/>
                              </MudSelect>
                       </div>
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-5 mb-3">
                           <MudTextField @bind-Value="ticket.Asunto"Label="Asunto" Variant="Variant.Text" Margin="Margin.Dense"></MudTextField>
                       </div>
                       <div class="col-md-4 mb-3">
@@ -64,11 +63,26 @@
                               </MudSelect>
 
                       </div>
-
-                        <div class="col-md-12 mb-3">
-                          <label for="">Mensaje</Label>
-                            <MudTextField @bind-Value="ticket.Mensaje"Label="Describa el problema" Variant="Variant.Text" Margin="Margin.Dense" ></MudTextField>
+                      <div class="col-md-3">  
+                            <MudCheckBox Label="Solucionado?" @bind-Checked="FS">
+                            @if (FS == true)
+                                {
+                                    ticket.FechaSolucion = DateTime.Today;
+                                }
+                                else ticket.FechaSolucion = DateTime.MaxValue;
+                        </MudCheckBox>
                       </div>
+
+                        <div class="col-md-6 mb-3">
+                          <label for="">Mensaje</Label>
+                            <MudTextField @bind-Value="ticket.Mensaje"Label="Describa el problema" Variant="Variant.Outlined" Margin="Margin.Dense" Lines="5"></MudTextField>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                          <label for="">Mensaje de Solucion</Label>
+                            <MudTextField @bind-Value="ticket.IngenieroMensaje"Label="Solucion del Problema" Variant="Variant.Outlined" Margin="Margin.Dense" Lines="5"></MudTextField>
+                      </div>
+                     
+                      
                   </div>
 
                   <div class="row">
@@ -93,7 +107,7 @@
 
     </EditForm>
 
-
+    
     
 
 }
@@ -103,9 +117,9 @@
 
 @code {
     public Ticket ticket;
-
+    public string MensajeInge = string.Empty;
     IEnumerable<Ingeniero> ingeniero;
-
+    public bool FS { get; set; }
 
 
     [Parameter]
@@ -120,7 +134,7 @@
 
             if (id == 0)
 
-                ticket = new Ticket() {Fecha = DateTime.Today };
+                ticket = new Ticket() {Fecha = DateTime.Today,IngenieroMensaje = MensajeInge};
 
             else
                 ticket = await servicesticket.GetDetails(id);
@@ -142,7 +156,7 @@
 
     private async Task Home()
     {
-        navigation.NavigateTo("/tablero");
+        navigation.NavigateTo("/tableroIngenieros");
     }
 
 

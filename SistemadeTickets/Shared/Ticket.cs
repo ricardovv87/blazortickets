@@ -24,6 +24,10 @@ namespace SistemadeTickets.Shared
 
         public string Mensaje { get; set; }
 
+        public string IngenieroMensaje { get; set; }
+
+        public DateTime FechaSolucion { get; set; }
+
 
     }
 }

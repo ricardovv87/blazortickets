@@ -126,20 +126,22 @@ using MudBlazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 87 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TableroTickets.razor"
+#line 90 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TableroTickets.razor"
        
     IEnumerable<Ticket> ticket;
     public string Filter { get; set; }
+    public string Message { get; set; }
+
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            ticket = await servicesticket.GetTicket();
+            ticket = await servicesticket.Abiertos();
         }
         catch (Exception e)
         {
-            throw e;
+          Message = "Error encontrado..." + e.Message;
         }
     }
 

@@ -18,7 +18,7 @@
 {
     
     
- <EditForm Model="ticket" >
+ <EditForm Model="ticket">
 
         <div class="card"> 
           <h5 class="card-header">Vista de Ticket</h5>
@@ -63,7 +63,6 @@
 
                       </div>
                       <div class="col-md-4 mb-3">
-                          @* <input type="button" class="btn btn-info" value="Volver" @onclick="Home"/>*@
                            <MudButton ButtonType="ButtonType.Button" Color="Color.Info" @onclick="Home">Volver</MudButton>
                       </div>
                       <div class="col-mb-4 mb-3">
@@ -77,6 +76,40 @@
           </div>
 
         </div>
+
+       <br/>
+
+        @if (ticket.FechaSolucion != DateTime.MaxValue)
+           {
+               <div class="card">
+                   <h6 class="card-header">Detalles de Solucion</h6>
+                   <div class="card-body">
+                       <div class="container-fluid">
+                           <div class="row">
+                               <table class="table">
+                                     <thead>
+                                        <tr>
+                                        <th>Fecha de Solucion</th>
+                                        <th>Solucion</th>
+                                        </tr>
+                                    </thead>
+                                        <tbody>
+                                        <tr>
+                                        <td>@ticket.FechaSolucion.ToShortDateString()</td>
+                                        <td>@ticket.IngenieroMensaje</td>
+                                        </tr>
+                                     </tbody>
+                             </table>
+                           </div>
+                       </div>
+                   </div>
+                     
+
+               </div>
+               
+           }else{<div> </div>}
+           
+
 
     </EditForm>
 
