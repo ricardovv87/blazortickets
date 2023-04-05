@@ -26,9 +26,13 @@
               <div class="container">
 
                   <div class="row">
-                      <div class="col-md-6 mb-3">
-                          <label for="">Usuario</Label>
+                      <div class="col-md-4 mb-3">
+                          <label for="">Usuario que Reporta</Label>
                               <InputText class="form-control" @bind-Value="ticket.Usuario" readonly></InputText>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                          <label for="">Telefono de Contacto</Label>
+                              <InputText class="form-control" @bind-Value="ticket.Telefono" readonly></InputText>
                       </div>
                        <div class="col-md-3 ">
                           <label for="">Fecha de Solicitud</Label>
@@ -74,14 +78,12 @@
 
               </div>
           </div>
-
         </div>
-
        <br/>
 
-        @if (ticket.FechaSolucion != DateTime.MaxValue)
+        @if (!string.IsNullOrEmpty(ticket.IngenieroMensaje))
            {
-               <div class="card">
+               <div class="card" >
                    <h6 class="card-header">Detalles de Solucion</h6>
                    <div class="card-body">
                        <div class="container-fluid">
@@ -103,11 +105,9 @@
                            </div>
                        </div>
                    </div>
-                     
-
                </div>
                
-           }else{<div> </div>}
+           }
            
 
 

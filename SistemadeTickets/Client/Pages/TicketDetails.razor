@@ -23,13 +23,17 @@
           <h5 class="card-header">Formulario de Ticket</h5>
           <div class="card-body">
               <div class="container">
-
+                  
                   <div class="row">
-                      <div class="col-md-6 mb-3">
-                          <label for="">Usuario</Label>
+                      <div class="col-md-4 mb-3">
+                          <label>Usuario que Reporta</Label>
                               <InputText class="form-control" @bind-Value="ticket.Usuario" required></InputText>
                       </div>
-                       <div class="col-md-3 ">
+                      <div class="col-md-3 mb-3">
+                          <label>Telefono de Contacto</Label>
+                              <InputText class="form-control" @bind-Value="ticket.Telefono" placeholder="Celular o Extension" required></InputText>
+                      </div>
+                       <div class="col-md-3 mb-3">
                           <label for="">Fecha de Solicitud</Label>
                               <InputDate class="form-control" @bind-Value="ticket.Fecha"></InputDate>
                       </div>
@@ -59,14 +63,14 @@
                   </div>
 
                   <div class="row">
-                      <div class="col-mb-4 mb-3">
+                      <div class="col-mb-4">
 
                       </div>
                       <div class="col-md-4 mb-3">
                           <input type="submit" class="btn btn-success" value="Guardar"/>
                            <input type="button" class="btn btn-secundary" value="Cancelar" @onclick="Home"/>
                       </div>
-                      <div class="col-mb-4 mb-3">
+                      <div class="col-mb-4">
 
                       </div>
 
@@ -92,12 +96,14 @@
     public Ticket ticket;
     [Parameter]
     public int id { get; set; }
+    
 
     protected async override Task OnInitializedAsync()
     {
+
         if (id == 0)
             ticket = new Ticket();
-        else
+    else
             ticket = await servicesticket.GetDetails(id);
 
         ticket.Fecha = DateTime.Today;

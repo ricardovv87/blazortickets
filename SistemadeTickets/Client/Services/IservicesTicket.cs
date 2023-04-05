@@ -18,6 +18,8 @@ namespace SistemadeTickets.Client.Services
 
         Task<IEnumerable<Ticket>> Abiertos();
 
+       
+
 
     }
 }

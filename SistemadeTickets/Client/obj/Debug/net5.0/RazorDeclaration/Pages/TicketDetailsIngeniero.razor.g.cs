@@ -127,12 +127,14 @@ using MudBlazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 118 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TicketDetailsIngeniero.razor"
+#line 145 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TicketDetailsIngeniero.razor"
        
     public Ticket ticket;
     public string MensajeInge = string.Empty;
     IEnumerable<Ingeniero> ingeniero;
+    IEnumerable<Tipos> tipos;
     public bool FS { get; set; }
+    public string message { get; set; }
 
 
     [Parameter]
@@ -142,9 +144,9 @@ using MudBlazor.Services;
     {
         try
         {
-
+            tipos = await servicestipos.TiposCat();
             ingeniero = await ServicesIngeniero.GetIngenieros();
-
+            
             if (id == 0)
 
                 ticket = new Ticket() {Fecha = DateTime.Today,IngenieroMensaje = MensajeInge};
@@ -155,7 +157,7 @@ using MudBlazor.Services;
         }
         catch (Exception e)
         {
-            throw e;
+            message = "error encontrado en..."+e.Message;
         }
 
     }
@@ -164,7 +166,7 @@ using MudBlazor.Services;
     {
         await servicesticket.SaveTicket(ticket);
         Home();
-        
+
     }
 
     private async Task Home()
@@ -172,12 +174,20 @@ using MudBlazor.Services;
         navigation.NavigateTo("/tableroIngenieros");
     }
 
+    private void Borrar()
+    {
+        servicesticket.DeleteTicket(id);
+        Home();
+    }
 
+    
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IservicesTipos servicestipos { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IDialogService DialogService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IservicesIngeniero ServicesIngeniero { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IservicesTicket servicesticket { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager navigation { get; set; }

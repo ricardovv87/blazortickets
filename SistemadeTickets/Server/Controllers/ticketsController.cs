@@ -66,6 +66,8 @@ namespace SistemadeTickets.Server.Controllers
             return await _ticketRepository.SoloAbiertos();
         }
 
+       
+
         [HttpGet("{Id}")]
         public async Task<Ticket> get(int Id) 
         {

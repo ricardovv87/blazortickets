@@ -28,6 +28,11 @@ namespace SistemadeTickets.Shared
 
         public DateTime FechaSolucion { get; set; }
 
+        public string Telefono { get; set; }
+
+        public string Categoria { get; set; }
+
+
 
     }
 }

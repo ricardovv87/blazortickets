@@ -7,13 +7,9 @@ using System.Threading.Tasks;
 
 namespace TicketsRepository
 {
-    public interface IingenieroRepository
+    public interface ITiposRepository
     {
-         Task<bool> InsertIng(Ingeniero ingeniero);
-
-        public Task DeleteIng(int Id);
-
-        Task<IEnumerable<Ingeniero>>GetIngenieros();
+        Task<IEnumerable<Tipos>> GetTipos();
 
     }
 }

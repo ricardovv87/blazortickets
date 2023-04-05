@@ -21,6 +21,7 @@ namespace TicketsRepository
 
         Task<IEnumerable<Ticket>> SoloAbiertos();
 
+        
 
     }
 }

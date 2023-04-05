@@ -1,6 +1,6 @@
 ﻿@page "/listaingenieros"
 @inject IservicesIngeniero ServicesIngeniero
-
+@inject IservicesTipos servicesTipos
 <h3>ListaIngenieros</h3>
 
 @if (ingeniero == null)
@@ -19,10 +19,10 @@
             </tr>
         </Thead>
         <tbody>
-            @foreach (var item in ingeniero)
+            @foreach (var item in tipos)
            {
                <tr>
-                   <td>@item.ingeniero</td>
+                   <td>@item.Categoria</td>
                </tr>
            }
         </tbody>
@@ -40,11 +40,14 @@
 
 @code {
     IEnumerable<Ingeniero> ingeniero;
+    IEnumerable<Tipos> tipos;
+
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
+            tipos = await servicesTipos.TiposCat();
             ingeniero = await ServicesIngeniero.GetIngenieros();
         }
         catch (Exception e)

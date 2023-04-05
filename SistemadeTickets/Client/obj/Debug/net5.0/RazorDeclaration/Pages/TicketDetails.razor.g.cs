@@ -127,17 +127,19 @@ using MudBlazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 91 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TicketDetails.razor"
+#line 95 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TicketDetails.razor"
        
     public Ticket ticket;
     [Parameter]
     public int id { get; set; }
+    
 
     protected async override Task OnInitializedAsync()
     {
+
         if (id == 0)
             ticket = new Ticket();
-        else
+    else
             ticket = await servicesticket.GetDetails(id);
 
         ticket.Fecha = DateTime.Today;

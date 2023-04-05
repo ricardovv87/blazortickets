@@ -18,6 +18,7 @@ namespace TicketsRepository
             _dbConnection = dbConnection;
         }
 
+
         public async Task DeleteTicket(int Id)
         {
             var sql = @"DELETE FROM Ticket WHERE Id=@Id";
@@ -36,6 +37,8 @@ namespace TicketsRepository
                                 Ingeniero,
                                 Mensaje,
                                 IngenieroMensaje,
+                                Telefono,
+                                Categoria,
                                 FechaSolucion FROM Ticket WHERE Id =@Id";
 
             return await _dbConnection.QueryFirstOrDefaultAsync<Ticket>(
@@ -46,7 +49,7 @@ namespace TicketsRepository
 
         public async Task<IEnumerable<Ticket>> GetTickets()
         {
-            var sql = @"SELECT Id,Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje, IngenieroMensaje, FechaSolucion FROM Ticket";
+            var sql = @"SELECT Id,Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje, IngenieroMensaje, FechaSolucion, Telefono, Categoria FROM Ticket";
 
             return await _dbConnection.QueryAsync<Ticket>(sql, new {});
         }
@@ -55,8 +58,8 @@ namespace TicketsRepository
         {
             try
             {
-                var sql = @"INSERT INTO Ticket (Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje, IngenieroMensaje)
-                                                VALUES(@Usuario, @Fecha, @Estado, @Prioridad, @Asunto, @Ingeniero, @Mensaje, @IngenieroMensaje)";
+                var sql = @"INSERT INTO Ticket (Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje, IngenieroMensaje, Telefono, Categoria)
+                                                VALUES(@Usuario, @Fecha, @Estado, @Prioridad, @Asunto, @Ingeniero, @Mensaje, @IngenieroMensaje, @Telefono, @Categoria)";
 
                 var result = await _dbConnection.ExecuteAsync(
                     sql, new
@@ -69,6 +72,8 @@ namespace TicketsRepository
                         ticket.Ingeniero,
                         ticket.Mensaje,
                         ticket.IngenieroMensaje,
+                        ticket.Telefono,
+                        ticket.Categoria
                         
 
 
@@ -90,6 +95,8 @@ namespace TicketsRepository
 
         }
 
+        
+
         public async Task<bool> UpdateTicket(Ticket ticket)
         {
             try
@@ -102,6 +109,8 @@ namespace TicketsRepository
                                                 Ingeniero =@Ingeniero,
                                                 IngenieroMensaje =@IngenieroMensaje,
                                                 Mensaje =@Mensaje,
+                                                Telefono =@Telefono,
+                                                Categoria =@Categoria,
                                                 FechaSolucion =@FechaSolucion WHERE Id = @Id";
                                                 
                 var result = await _dbConnection.ExecuteAsync(
@@ -116,6 +125,8 @@ namespace TicketsRepository
                         ticket.Mensaje,
                         ticket.IngenieroMensaje,
                         ticket.FechaSolucion,
+                        ticket.Telefono,
+                        ticket.Categoria,
                         ticket.Id
                     });
                 return result > 0;

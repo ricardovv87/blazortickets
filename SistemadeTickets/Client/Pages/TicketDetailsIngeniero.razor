@@ -4,10 +4,12 @@
 @inject NavigationManager navigation
 @inject IservicesTicket servicesticket
 @inject IservicesIngeniero ServicesIngeniero
+@inject IDialogService DialogService
+@inject IservicesTipos servicestipos
 
 
 
-
+@message
 
 @if (ticket == null)
 {
@@ -26,10 +28,13 @@
               <div class="container">
 
                   <div class="row">
-                      <div class="col-md-6 mb-3">
+                      <div class="col-md-4 mb-3">
                             <MudTextField @bind-Value="ticket.Usuario"Label="Usuario" Variant="Variant.Text" Margin="Margin.Dense"></MudTextField>
                       </div>
-                       <div class="col-md-3 ">  
+                       <div class="col-md-4 mb-3">
+                            <MudTextField @bind-Value="ticket.Telefono"Label="Telefono" Variant="Variant.Text" Margin="Margin.Dense"></MudTextField>
+                      </div>
+                       <div class="col-md-3 mb-3 ">  
                            <MudDatePicker Label="Fecha" Date="ticket.Fecha"></MudDatePicker>
                       
                       </div>
@@ -51,9 +56,20 @@
                                 <MudSelectItem Value="@("Urgente")"/>
                              </MudSelect>
                       </div>
+
+                      <div class="col-md-4 mb-3">
+                              <MudSelect @bind-Value="@ticket.Categoria" Label="Categoria">
+                                   @foreach ( var cat in tipos)
+                                     {
+                                        <MudSelectItem Value="@cat.Categoria">@cat.Categoria</MudSelectItem>
+                                     }
+                              </MudSelect>
+                      </div>
+
                         <div class="col-md-5 mb-3">
                           <MudTextField @bind-Value="ticket.Asunto"Label="Asunto" Variant="Variant.Text" Margin="Margin.Dense"></MudTextField>
                       </div>
+
                       <div class="col-md-4 mb-3">
                               <MudSelect @bind-Value="@ticket.Ingeniero" Label="Asignar Ingeniero">
                                    @foreach ( var item in ingeniero)
@@ -64,13 +80,21 @@
 
                       </div>
                       <div class="col-md-3">  
-                            <MudCheckBox Label="Solucionado?" @bind-Checked="FS">
-                            @if (FS == true)
-                                {
-                                    ticket.FechaSolucion = DateTime.Today;
-                                }
-                                else ticket.FechaSolucion = DateTime.MaxValue;
-                        </MudCheckBox>
+                            
+                            @if (string.IsNullOrEmpty(ticket.IngenieroMensaje))
+                                {    FS = false;
+                                <MudCheckBox Label="Solucionado" @bind-Checked="FS"></MudCheckBox>
+                                ticket.FechaSolucion = DateTime.MaxValue;
+
+                            }
+                            else {
+                                FS = true;
+                                <MudCheckBox Label="Solucionado?" @bind-Checked="FS"></MudCheckBox>
+                                    ticket.FechaSolucion = DateTime.Today;}
+                                      
+
+                                
+                        
                       </div>
 
                         <div class="col-md-6 mb-3">
@@ -86,16 +110,19 @@
                   </div>
 
                   <div class="row">
-                      <div class="col-mb-4 mb-3">
+                      <div class="col-mb-8">
 
                       </div>
-                      <div class="col-md-4 mb-3">
-                          <input type="submit" class="btn btn-success" value="Guardar"/>
-                           <input type="button" class="btn btn-secundary" value="Cancelar" @onclick="Home">
+                      <div class="col-md-2">
+                          <input type="submit" class="btn btn-success" value="Guardar"/> 
                       </div>
-                      <div class="col-mb-4 mb-3">
-
+                      <div class="col-md-2">
+                          <input type="button" class="btn btn-secundary" value="Cancelar" @onclick="Home"/>
                       </div>
+                      <div class="col-md-2">
+                        <input type="button" class="btn btn-danger" value="Eliminar" @onclick="Borrar"/>
+                      </div>
+                     
 
                   </div>
 
@@ -119,7 +146,9 @@
     public Ticket ticket;
     public string MensajeInge = string.Empty;
     IEnumerable<Ingeniero> ingeniero;
+    IEnumerable<Tipos> tipos;
     public bool FS { get; set; }
+    public string message { get; set; }
 
 
     [Parameter]
@@ -129,9 +158,9 @@
     {
         try
         {
-
+            tipos = await servicestipos.TiposCat();
             ingeniero = await ServicesIngeniero.GetIngenieros();
-
+            
             if (id == 0)
 
                 ticket = new Ticket() {Fecha = DateTime.Today,IngenieroMensaje = MensajeInge};
@@ -142,7 +171,7 @@
         }
         catch (Exception e)
         {
-            throw e;
+            message = "error encontrado en..."+e.Message;
         }
 
     }
@@ -151,7 +180,7 @@
     {
         await servicesticket.SaveTicket(ticket);
         Home();
-        
+
     }
 
     private async Task Home()
@@ -159,6 +188,12 @@
         navigation.NavigateTo("/tableroIngenieros");
     }
 
+    private void Borrar()
+    {
+        servicesticket.DeleteTicket(id);
+        Home();
+    }
 
+    
 
 }

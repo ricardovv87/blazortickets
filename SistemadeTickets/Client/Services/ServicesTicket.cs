@@ -47,5 +47,7 @@ namespace SistemadeTickets.Client.Services
         {
             return await _httpclient.GetFromJsonAsync<IEnumerable<Ticket>>($"api/tickets");
         }
+
+        
     }
 }

@@ -37,8 +37,9 @@ namespace SistemadeTickets.Server
                     Configuration.GetConnectionString("DefaultConnection")));
 
             //Servicios configurados 
-            services.AddScoped<ITicketRepository,TicketRepository> ();
+            services.AddScoped<ITicketRepository,TicketRepository>();
             services.AddScoped<IingenieroRepository, IngenieroRepository>();
+            services.AddScoped<ITiposRepository, TiposRepository>();
             services.AddSingleton<IDbConnection>((sp) => new SqlConnection(this.Configuration.GetConnectionString("DefaultConnection")));
 
 

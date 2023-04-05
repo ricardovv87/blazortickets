@@ -129,11 +129,14 @@ using MudBlazor.Services;
 #line 41 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\ListaIngenieros.razor"
        
     IEnumerable<Ingeniero> ingeniero;
+    IEnumerable<Tipos> tipos;
+
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
+            tipos = await servicesTipos.TiposCat();
             ingeniero = await ServicesIngeniero.GetIngenieros();
         }
         catch (Exception e)
@@ -147,6 +150,7 @@ using MudBlazor.Services;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IservicesTipos servicesTipos { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IservicesIngeniero ServicesIngeniero { get; set; }
     }
 }
