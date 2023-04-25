@@ -1,11 +1,12 @@
 ﻿<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">SistemadeTickets</a>
+    <h6>Opciones</h6>
+   @* <a class="navbar-brand" href="">Opciones</a>*@
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
     </button>
 </div>
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+@*<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <ul class="nav flex-column">
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
@@ -26,10 +27,34 @@
             </NavLink>
              </li>
         </AuthorizeView>
+        <AuthorizeView Roles="Admin">
+             <li class="nav-item px-3">
+            <NavLink class="nav-link" href="/configuraciones" Match="NavLinkMatch.All">
+                <span class="oi oi-dashboard" aria-hidden="true"></span> Configuraciones
+            </NavLink>
+             </li>
+        </AuthorizeView>
 
         
     </ul>
-</div>
+</div>*@
+
+<MudNavMenu>
+   
+    <MudNavLink Href="/" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Inicio</MudNavLink>
+     <AuthorizeView>
+        <MudNavLink Href="/tablero" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Assignment">Tickets</MudNavLink>
+    </AuthorizeView>
+    <AuthorizeView Roles="Admin"> 
+        <MudNavLink Href="/tableroingenieros" Icon="@Icons.Material.Filled.FormatListBulleted" Match="NavLinkMatch.Prefix">Tablero Ingeniero</MudNavLink>
+        <MudNavLink Href="/configuraciones" Icon="@Icons.Material.Filled.SettingsApplications" Match="NavLinkMatch.Prefix">Sistema</MudNavLink>
+    </AuthorizeView>
+   
+</MudNavMenu>
+
+
+
+
 
 @code {
     private bool collapseNavMenu = true;

@@ -39,6 +39,7 @@ namespace TicketsRepository
                                 IngenieroMensaje,
                                 Telefono,
                                 Categoria,
+                                Sucursal,
                                 FechaSolucion FROM Ticket WHERE Id =@Id";
 
             return await _dbConnection.QueryFirstOrDefaultAsync<Ticket>(
@@ -49,7 +50,7 @@ namespace TicketsRepository
 
         public async Task<IEnumerable<Ticket>> GetTickets()
         {
-            var sql = @"SELECT Id,Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje, IngenieroMensaje, FechaSolucion, Telefono, Categoria FROM Ticket";
+            var sql = @"SELECT Id,Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje, IngenieroMensaje, FechaSolucion, Telefono, Categoria, Sucursal FROM Ticket";
 
             return await _dbConnection.QueryAsync<Ticket>(sql, new {});
         }
@@ -58,8 +59,8 @@ namespace TicketsRepository
         {
             try
             {
-                var sql = @"INSERT INTO Ticket (Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje, IngenieroMensaje, Telefono, Categoria)
-                                                VALUES(@Usuario, @Fecha, @Estado, @Prioridad, @Asunto, @Ingeniero, @Mensaje, @IngenieroMensaje, @Telefono, @Categoria)";
+                var sql = @"INSERT INTO Ticket (Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje, IngenieroMensaje, Telefono, Categoria, Sucursal)
+                                                VALUES(@Usuario, @Fecha, @Estado, @Prioridad, @Asunto, @Ingeniero, @Mensaje, @IngenieroMensaje, @Telefono, @Categoria, @Sucursal)";
 
                 var result = await _dbConnection.ExecuteAsync(
                     sql, new
@@ -73,7 +74,8 @@ namespace TicketsRepository
                         ticket.Mensaje,
                         ticket.IngenieroMensaje,
                         ticket.Telefono,
-                        ticket.Categoria
+                        ticket.Categoria,
+                        ticket.Sucursal
                         
 
 
@@ -89,7 +91,7 @@ namespace TicketsRepository
 
         public async Task<IEnumerable<Ticket>> SoloAbiertos()
         {
-            var sql = @"SELECT Id,Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje FROM Ticket where Estado != 'Cerrado'";
+            var sql = @"SELECT Id,Usuario, Fecha, Estado, Prioridad, Asunto, Ingeniero, Mensaje, IngenieroMensaje, Telefono, Categoria, Sucursal FROM Ticket where Estado != 'Cerrado'";
 
             return await _dbConnection.QueryAsync<Ticket>(sql, new { });
 
@@ -111,6 +113,7 @@ namespace TicketsRepository
                                                 Mensaje =@Mensaje,
                                                 Telefono =@Telefono,
                                                 Categoria =@Categoria,
+                                                Sucursal =@Sucursal,
                                                 FechaSolucion =@FechaSolucion WHERE Id = @Id";
                                                 
                 var result = await _dbConnection.ExecuteAsync(
@@ -127,6 +130,7 @@ namespace TicketsRepository
                         ticket.FechaSolucion,
                         ticket.Telefono,
                         ticket.Categoria,
+                        ticket.Sucursal,
                         ticket.Id
                     });
                 return result > 0;

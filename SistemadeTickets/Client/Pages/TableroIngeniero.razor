@@ -31,16 +31,18 @@
     <br/>
 
     <div class="table-responsive">
-        <table class="table">
+        <table class="table" >
             <thead>
                 <tr>
                     <th>Acciones</th>
                     <th>Usuario</th>
+                    <th>Categoria</th>
+                    <th>Telefono</th>
                     <th>Fecha</th>
                     <th>Estado</th>
                     <th>Prioridad</th>
                     <th>Asunto</th>
-                    <th>Ingeniero</th>
+                    <th>Ingeniero</th> 
                     <th>Mensaje</th>
                 </tr>
             </thead>
@@ -60,6 +62,8 @@
 
                         </td>
                         <td>@solicitud.Usuario</td>
+                        <td>@solicitud.Categoria</td>
+                        <td>@solicitud.Telefono</td>
                         <td>@solicitud.Fecha.ToShortDateString()</td>
                         <td>@solicitud.Estado</td>
                         <td>@solicitud.prioridad</td>
@@ -128,6 +132,7 @@
         if (filtro.Asunto.Contains(Filter, StringComparison.OrdinalIgnoreCase))
             return true;
 
+        
         return false;
     }
 

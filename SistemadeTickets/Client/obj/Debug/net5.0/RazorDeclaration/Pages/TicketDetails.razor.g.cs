@@ -127,16 +127,17 @@ using MudBlazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 95 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TicketDetails.razor"
+#line 96 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TicketDetails.razor"
        
     public Ticket ticket;
+     IEnumerable<Sucursales> sucursales;
     [Parameter]
     public int id { get; set; }
     
 
     protected async override Task OnInitializedAsync()
     {
-
+        sucursales = await servicessucursales.getsucursales();
         if (id == 0)
             ticket = new Ticket();
     else
@@ -165,6 +166,7 @@ using MudBlazor.Services;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IServicesSucursales servicessucursales { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IservicesTicket servicesticket { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager navigation { get; set; }
     }

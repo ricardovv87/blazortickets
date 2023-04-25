@@ -126,7 +126,7 @@ using MudBlazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 93 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TableroIngeniero.razor"
+#line 97 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TableroIngeniero.razor"
        
     IEnumerable<Ticket> ticket;
     public string Filter { get; set; }
@@ -165,6 +165,7 @@ using MudBlazor.Services;
         if (filtro.Asunto.Contains(Filter, StringComparison.OrdinalIgnoreCase))
             return true;
 
+        
         return false;
     }
 

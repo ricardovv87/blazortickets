@@ -27,39 +27,31 @@
 
                   <div class="row">
                       <div class="col-md-4 mb-3">
-                          <label for="">Usuario que Reporta</Label>
-                              <InputText class="form-control" @bind-Value="ticket.Usuario" readonly></InputText>
+                           <MudTextField @bind-Value="ticket.Usuario" Label="Usuario que Reporta" Variant="Variant.Outlined" Margin="Margin.Dense" ReadOnly="true"></MudTextField>
                       </div>
                       <div class="col-md-3 mb-3">
-                          <label for="">Telefono de Contacto</Label>
-                              <InputText class="form-control" @bind-Value="ticket.Telefono" readonly></InputText>
+                          <MudTextField @bind-Value="ticket.Telefono" Label="Telefono de Contacto"  Variant="Variant.Outlined" Margin="Margin.Dense" ReadOnly="true"></MudTextField>
                       </div>
                        <div class="col-md-3 ">
-                          <label for="">Fecha de Solicitud</Label>
-                              <InputDate class="form-control" @bind-Value="ticket.Fecha" readonly></InputDate>
+                          <MudDatePicker Label="Fecha" Date="ticket.Fecha" ReadOnly="true"></MudDatePicker>
                       </div>
                         <div class="col-md-4 mb-3">
-                          <label for="">Estado</Label>
-                              <InputText class="form-control" @bind-Value="ticket.Estado" readonly placeholder="Sin Asignar"></InputText>
+                          <MudTextField @bind-Value="ticket.Estado" placeholder="Sin asignar" Label="Estado" Variant="Variant.Outlined" Margin="Margin.Dense" ReadOnly="true"></MudTextField>
                       </div>
 
                         <div class="col-md-4 mb-3">
-                          <label for="">Prioridad</Label>
-                              <InputText class="form-control" @bind-Value="ticket.prioridad" readonly placeholder="Baja"></InputText>
+                         <MudTextField @bind-Value="ticket.prioridad" placeholder="Baja" Label="Prioridad" Variant="Variant.Outlined" Margin="Margin.Dense" ReadOnly="true"></MudTextField>
                       </div>
 
                         <div class="col-md-6 mb-3">
-                          <label for="">Asunto</Label>
-                              <InputText class="form-control" @bind-Value="ticket.Asunto" readonly></InputText>
+                          <MudTextField @bind-Value="ticket.Asunto" Label="Asunto" Variant="Variant.Outlined" Margin="Margin.Dense" ReadOnly="true"></MudTextField>
                       </div>
                       <div class="col-md-4 mb-3">
-                          <label for="">Asignado A</Label>
-                              <InputText class="form-control" @bind-Value="ticket.Ingeniero" readonly placeholder="Sin Asignar"></InputText>
+                         <MudTextField @bind-Value="ticket.Ingeniero" placeholder="Sin asignar" Label="Ingeniero" Variant="Variant.Outlined" Margin="Margin.Dense" ReadOnly="true"></MudTextField>
                       </div>
 
                         <div class="col-md-12 mb-3">
-                          <label for="">Mensaje</Label>
-                              <InputTextArea class="form-control" @bind-Value="ticket.Mensaje" readonly></InputTextArea>
+                         <MudTextField @bind-Value="ticket.Mensaje" Label="Mensaje" Variant="Variant.Outlined" Margin="Margin.Dense" Lines="5" ReadOnly="true"></MudTextField>
                       </div>
                   </div>
                   <div class="row">

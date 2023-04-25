@@ -11,5 +11,7 @@ namespace TicketsRepository
     {
         Task<IEnumerable<Tipos>> GetTipos();
 
+        
+
     }
 }

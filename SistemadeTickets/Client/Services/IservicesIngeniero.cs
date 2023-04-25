@@ -12,5 +12,11 @@ namespace SistemadeTickets.Client.Services
         Task DeleteIng(int Id);
 
         Task<IEnumerable<Ingeniero>> GetIngenieros();
+
+        Task<Ingeniero> IngeDetails(int Id);
+
+       
+
+
     }
 }

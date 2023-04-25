@@ -1,9 +1,12 @@
-﻿@inherits LayoutComponentBase
+﻿@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@inherits LayoutComponentBase
+@inject SignOutSessionStateManager SignOutManager
+@inject NavigationManager Navigation
 <MudThemeProvider/> 
 <MudDialogProvider/> 
 <MudSnackbarProvider/>
 
-<div class="page">
+@*<div class="page">
     <div class="sidebar">
         <NavMenu />
     </div>
@@ -18,4 +21,67 @@
             @Body
         </div>
     </div>
-</div>
+</div>*@
+
+<MudLayout>
+    <MudAppBar>
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+        Sistema de Tickets
+        <MudAppBarSpacer />
+        <AuthorizeView>
+            <Authorized>
+               
+               
+                    <MudMenu  Direction="Direction.Right">
+                         <ActivatorContent>
+                             <MudAvatar Image="https://cdn.pixabay.com/photo/2021/07/02/04/48/user-6380868_1280.png"/>
+                         </ActivatorContent>                    
+                       <ChildContent>
+                          
+                                 <MudMenuItem >@context.User.Identity.Name.ToString()</MudMenuItem>
+                                 <MudMenuItem @onclick="BeginSignOut">Salir</MudMenuItem>
+                       </ChildContent>
+                    
+                    </MudMenu>  
+            </Authorized>
+            <NotAuthorized>            
+                <MudButton OnClick="Iniciar" Color="Color.Secondary">Iniciar Sesion</MudButton>
+            </NotAuthorized>
+        </AuthorizeView>
+        
+     @*  <LoginDisplay />*@
+    </MudAppBar>
+    
+    <MudDrawer @bind-Open="@_drawerOpen">
+        <NavMenu/>
+    </MudDrawer>
+    <MudMainContent>
+        <MudContainer MaxWidth="MaxWidth.ExtraLarge">
+        @Body
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+@code {
+    bool _drawerOpen = false;
+
+
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+        
+    }
+
+    private async Task BeginSignOut(MouseEventArgs args)
+    {
+        await SignOutManager.SetSignOutState();
+        Navigation.NavigateTo("authentication/logout");
+    }
+
+    private void Iniciar()
+    {
+        Navigation.NavigateTo("authentication/login");
+
+    }
+
+}

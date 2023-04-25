@@ -32,6 +32,8 @@ namespace SistemadeTickets.Shared
 
         public string Categoria { get; set; }
 
+        public string Sucursal { get; set; }
+
 
 
     }

@@ -11,9 +11,15 @@ namespace TicketsRepository
     {
          Task<bool> InsertIng(Ingeniero ingeniero);
 
+        Task<bool> UpdateIng(Ingeniero ingeniero);
+
         public Task DeleteIng(int Id);
 
         Task<IEnumerable<Ingeniero>>GetIngenieros();
+
+        Task<Ingeniero> GetDetailsInge(int Id);
+
+
 
     }
 }

@@ -117,6 +117,13 @@ using MudBlazor.Services;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 1 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Shared\MainLayout.razor"
+using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
+
+#line default
+#line hidden
+#nullable disable
     public partial class MainLayout : LayoutComponentBase
     {
         #pragma warning disable 1998
@@ -124,6 +131,37 @@ using MudBlazor.Services;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 64 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Shared\MainLayout.razor"
+       
+    bool _drawerOpen = false;
+
+
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+        _drawerOpen = false;
+    }
+
+    private async Task BeginSignOut(MouseEventArgs args)
+    {
+        await SignOutManager.SetSignOutState();
+        Navigation.NavigateTo("authentication/logout");
+    }
+
+    private void Iniciar()
+    {
+        Navigation.NavigateTo("authentication/login");
+
+    }
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager Navigation { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SignOutSessionStateManager SignOutManager { get; set; }
     }
 }
 #pragma warning restore 1591

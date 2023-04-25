@@ -132,7 +132,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 18 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Shared\LoginDisplay.razor"
+#line 19 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Shared\LoginDisplay.razor"
       
     private async Task BeginSignOut(MouseEventArgs args)
     {

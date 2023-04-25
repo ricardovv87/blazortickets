@@ -1313,3 +1313,11 @@ C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5
 C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\Razor\Pages\TableroIngeniero.razor.g.cs
 C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\RazorDeclaration\Pages\VistaTicket.razor.g.cs
 C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\Razor\Pages\VistaTicket.razor.g.cs
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\RazorDeclaration\Pages\ConfiguracionesyRegistros.razor.g.cs
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\Razor\Pages\ConfiguracionesyRegistros.razor.g.cs
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\RazorDeclaration\Pages\MenuIngeniero.razor.g.cs
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\RazorDeclaration\Pages\MenuSucursales.razor.g.cs
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\RazorDeclaration\Pages\MenuTipos.razor.g.cs
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\Razor\Pages\MenuIngeniero.razor.g.cs
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\Razor\Pages\MenuSucursales.razor.g.cs
+C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\obj\Debug\net5.0\Razor\Pages\MenuTipos.razor.g.cs

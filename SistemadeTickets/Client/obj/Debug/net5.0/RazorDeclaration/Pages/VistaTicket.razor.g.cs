@@ -127,7 +127,7 @@ using MudBlazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 129 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\VistaTicket.razor"
+#line 121 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\VistaTicket.razor"
        
     public Ticket ticket;
     [Parameter]

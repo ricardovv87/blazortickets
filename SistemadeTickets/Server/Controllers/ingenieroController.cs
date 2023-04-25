@@ -42,6 +42,22 @@ namespace SistemadeTickets.Server.Controllers
             return await _iingeniero.GetIngenieros();
         }
 
+        [HttpGet("{Id}")]
+        public async Task<Ingeniero> GetIngeniero(int Id) 
+        {
+            return await _iingeniero.GetDetailsInge(Id);
+        }
+
+        [HttpPut("{Id}")]
+        public async Task<IActionResult> put(int Id, [FromBody] Ingeniero ingeniero) 
+        {
+            if (ingeniero == null) { return BadRequest(); }
+
+            await _iingeniero.UpdateIng(ingeniero);
+
+            return NoContent();
+        }
+
 
     }
 }

@@ -25,9 +25,17 @@ namespace SistemadeTickets.Client.Services
            return await _httpclient.GetFromJsonAsync<IEnumerable<Ingeniero>>($"api/ingeniero");
         }
 
+        public async Task<Ingeniero> IngeDetails(int Id)
+        {
+            return await _httpclient.GetFromJsonAsync<Ingeniero>($"api/ingeniero/{Id}");
+        }
+
         public async Task SaveIng(Ingeniero ingeniero)
         {
-            await _httpclient.PostAsJsonAsync<Ingeniero>($"api/ingeniero", ingeniero);
+            if (ingeniero.Id == 0)
+                await _httpclient.PostAsJsonAsync<Ingeniero>($"api/ingeniero", ingeniero);
+            else
+                await _httpclient.PutAsJsonAsync<Ingeniero>($"api/ingeniero/{ingeniero.Id}", ingeniero);
         }
     }
 }

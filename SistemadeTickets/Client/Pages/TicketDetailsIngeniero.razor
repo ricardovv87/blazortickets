@@ -6,6 +6,7 @@
 @inject IservicesIngeniero ServicesIngeniero
 @inject IDialogService DialogService
 @inject IservicesTipos servicestipos
+@inject IServicesSucursales servicessucursales
 
 
 
@@ -31,14 +32,22 @@
                       <div class="col-md-4 mb-3">
                             <MudTextField @bind-Value="ticket.Usuario"Label="Usuario" Variant="Variant.Text" Margin="Margin.Dense"></MudTextField>
                       </div>
-                       <div class="col-md-4 mb-3">
+                       <div class="col-md-3 mb-3">
                             <MudTextField @bind-Value="ticket.Telefono"Label="Telefono" Variant="Variant.Text" Margin="Margin.Dense"></MudTextField>
                       </div>
-                       <div class="col-md-3 mb-3 ">  
-                           <MudDatePicker Label="Fecha" Date="ticket.Fecha"></MudDatePicker>
-                      
+                       <div class="col-md-3 mb-3">
+                              <MudSelect @bind-Value="@ticket.Sucursal" Label="Sucursal">
+                                   @foreach ( var suc in sucursales)
+                                     {
+                                        <MudSelectItem Value="@suc.Sucursal">@suc.Sucursal</MudSelectItem>
+                                     }
+                              </MudSelect>
                       </div>
-                        <div class="col-md-4 mb-3">
+                       <div class="col-md-2 mb-3 ">  
+                           <MudDatePicker Label="Fecha" Date="ticket.Fecha"></MudDatePicker>
+                     
+                      </div>
+                        <div class="col-md-3 mb-3">
                        <MudSelect T="string" Label="Estado" @bind-Value="ticket.Estado">
                              <MudSelectItem Value="@("Abierto")"/>
                              <MudSelectItem Value="@("En Proceso")"/>
@@ -48,7 +57,7 @@
 
 
                       </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-md-3 mb-3">
                              <MudSelect T="string" Label="Prioridad" @bind-Value="ticket.prioridad">
                                 <MudSelectItem Value="@("Baja")"/>
                                 <MudSelectItem Value="@("Media")"/>
@@ -70,7 +79,7 @@
                           <MudTextField @bind-Value="ticket.Asunto"Label="Asunto" Variant="Variant.Text" Margin="Margin.Dense"></MudTextField>
                       </div>
 
-                      <div class="col-md-4 mb-3">
+                      <div class="col-md-3 mb-3">
                               <MudSelect @bind-Value="@ticket.Ingeniero" Label="Asignar Ingeniero">
                                    @foreach ( var item in ingeniero)
                                      {
@@ -147,6 +156,7 @@
     public string MensajeInge = string.Empty;
     IEnumerable<Ingeniero> ingeniero;
     IEnumerable<Tipos> tipos;
+    IEnumerable<Sucursales> sucursales;
     public bool FS { get; set; }
     public string message { get; set; }
 
@@ -160,7 +170,8 @@
         {
             tipos = await servicestipos.TiposCat();
             ingeniero = await ServicesIngeniero.GetIngenieros();
-            
+            sucursales = await servicessucursales.getsucursales();
+
             if (id == 0)
 
                 ticket = new Ticket() {Fecha = DateTime.Today,IngenieroMensaje = MensajeInge};

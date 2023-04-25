@@ -127,12 +127,13 @@ using MudBlazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 145 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TicketDetailsIngeniero.razor"
+#line 154 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TicketDetailsIngeniero.razor"
        
     public Ticket ticket;
     public string MensajeInge = string.Empty;
     IEnumerable<Ingeniero> ingeniero;
     IEnumerable<Tipos> tipos;
+    IEnumerable<Sucursales> sucursales;
     public bool FS { get; set; }
     public string message { get; set; }
 
@@ -146,7 +147,8 @@ using MudBlazor.Services;
         {
             tipos = await servicestipos.TiposCat();
             ingeniero = await ServicesIngeniero.GetIngenieros();
-            
+            sucursales = await servicessucursales.getsucursales();
+
             if (id == 0)
 
                 ticket = new Ticket() {Fecha = DateTime.Today,IngenieroMensaje = MensajeInge};
@@ -186,6 +188,7 @@ using MudBlazor.Services;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IServicesSucursales servicessucursales { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IservicesTipos servicestipos { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IDialogService DialogService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IservicesIngeniero ServicesIngeniero { get; set; }

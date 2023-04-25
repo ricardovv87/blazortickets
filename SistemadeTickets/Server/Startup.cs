@@ -40,6 +40,7 @@ namespace SistemadeTickets.Server
             services.AddScoped<ITicketRepository,TicketRepository>();
             services.AddScoped<IingenieroRepository, IngenieroRepository>();
             services.AddScoped<ITiposRepository, TiposRepository>();
+            services.AddScoped<ISucursalesRepository, SucursalesRepository>();
             services.AddSingleton<IDbConnection>((sp) => new SqlConnection(this.Configuration.GetConnectionString("DefaultConnection")));
 
 

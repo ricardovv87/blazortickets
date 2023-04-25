@@ -24,6 +24,14 @@ namespace TicketsRepository
             var result = await _dbconnection.QueryAsync<Ingeniero>(sql, new { Id = Id });
         }
 
+        public async Task<Ingeniero> GetDetailsInge(int Id)
+        {
+            var sql = @"SELECT Id,
+                               Ingeniero FROM Ingenieros";
+
+            return await _dbconnection.QueryFirstOrDefaultAsync<Ingeniero>(sql, new {Id = Id});
+        }
+
         public async Task<IEnumerable<Ingeniero>> GetIngenieros()
         {
             var sql = @"SELECT Id,Ingeniero FROM Ingenieros";
@@ -48,10 +56,20 @@ namespace TicketsRepository
                     throw e;
                 }
 
-
-
-
             }
+
+        public async Task<bool> UpdateIng(Ingeniero ingeniero)
+        {
+            var sql = @"UPDATE Ingenieros SET Ingeniero =@Ingieniero WHERE Id = @Id";
+
+            var result = await _dbconnection.ExecuteAsync(sql, new
+            {
+                ingeniero.ingeniero,
+                ingeniero.Id
+            });
+            return result > 0;
         }
+    }
+
     } 
 

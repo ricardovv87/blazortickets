@@ -126,7 +126,7 @@ using MudBlazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 90 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TableroTickets.razor"
+#line 82 "C:\Users\redes\source\repos\blazortickets\SistemadeTickets\Client\Pages\TableroTickets.razor"
        
     IEnumerable<Ticket> ticket;
     public string Filter { get; set; }

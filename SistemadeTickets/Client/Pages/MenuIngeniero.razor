@@ -1,0 +1,81 @@
+﻿@page "/menuingeniero"
+@page "/menuingeniero/{id:int}"
+@inject IservicesIngeniero servicesingenieros
+@inject NavigationManager navigationmanager
+
+
+<h3>MenuIngeniero</h3>
+@message
+@if (inge == null)
+{
+	<div class="d-flex align-items-center">
+		<strong>Cargando...</strong>
+		<div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+	</div>
+}else{
+
+<div class="container" style="200px">
+	<MudCard Style="200">
+		<MudInput @bind-Value="ingeniero.ingeniero"></MudInput>
+	
+		<MudButton ButtonType="ButtonType.Submit" OnClick="Guardar">Guardar</MudButton>
+		@*<MudButton ButtonType="ButtonType.Button" Color="Color.Warning" @onclick="Elimnar">Elimnar</MudButton>*@
+		<MudButton ButtonType="ButtonType.Button" Color="Color.Dark" OnClick="Regresar"> Cancelar</MudButton>
+	</MudCard>
+</div>
+
+
+}
+
+@code {
+	public Ingeniero ingeniero;
+	IEnumerable<Ingeniero> inge;
+	public string message { get; set; }
+
+	[Parameter]
+	public int Id { get; set; }
+
+
+	protected override async Task OnInitializedAsync()
+	{
+		try
+		{
+			inge = await servicesingenieros.GetIngenieros();
+			if (Id == 0)
+			{
+				ingeniero = new Ingeniero();
+			}
+			else 
+			{
+				ingeniero = await servicesingenieros.IngeDetails(Id);
+			}
+
+
+		} 
+		catch (Exception e)
+		{
+			message = "error encontrado..." + e.Message;
+		}
+
+
+
+	}
+
+	private void Elimnar(int id)
+	{
+		servicesingenieros.DeleteIng(Id);
+	}
+
+
+	public void Regresar()
+	{
+		navigationmanager.NavigateTo("/configuraciones");
+	}
+
+	public async Task Guardar()
+	{
+		await servicesingenieros.SaveIng(ingeniero);
+
+	}
+
+}

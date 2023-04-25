@@ -29,6 +29,7 @@ namespace SistemadeTickets.Client
             builder.Services.AddScoped<IservicesIngeniero, ServicesIngeniero>();
             builder.Services.AddScoped<IservicesTicket, ServicesTicket>();
             builder.Services.AddScoped<IservicesTipos, ServicesTipos>();
+            builder.Services.AddScoped<IServicesSucursales, ServicesSucursales>();
             builder.Services.AddMudServices();
 
 
